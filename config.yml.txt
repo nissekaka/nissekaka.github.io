@@ -1,0 +1,2 @@
+name: Anton Eriksson
+theme: minima
