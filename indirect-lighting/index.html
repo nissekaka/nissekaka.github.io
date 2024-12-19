@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="max-image-preview:large">
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<title>Indirect Lighting &#8211; Anton-Eriksson.se</title>
+<link rel="alternate" type="application/rss+xml" title="Anton-Eriksson.se &raquo; Feed" href="./../feed/index.html">
+<link rel="alternate" type="application/rss+xml" title="Anton-Eriksson.se &raquo; Comments Feed" href="./../comments/feed/index.html">
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":".\/\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.7.1"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🐦‍⬛","🐦​⬛")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<style id="wp-block-navigation-link-inline-css">.wp-block-navigation .wp-block-navigation-item__label{overflow-wrap:break-word}.wp-block-navigation .wp-block-navigation-item__description{display:none}.link-ui-tools{border-top:1px solid #f0f0f0;padding:8px}.link-ui-block-inserter{padding-top:8px}.link-ui-block-inserter__back{margin-left:8px;text-transform:uppercase}</style>
+<link rel="stylesheet" id="wp-block-navigation-css" href="./../wp-includes/blocks/navigation/style.min.css?ver=6.7.1" media="all">
+<link rel="stylesheet" id="wp-block-social-links-css" href="./../wp-includes/blocks/social-links/style.min.css?ver=6.7.1" media="all">
+<style id="wp-block-group-inline-css">.wp-block-group{box-sizing:border-box}:where(.wp-block-group.wp-block-group-is-layout-constrained){position:relative}</style>
+<style id="wp-block-group-theme-inline-css">:where(.wp-block-group.has-background){padding:1.25em 2.375em}</style>
+<style id="wp-block-template-part-theme-inline-css">:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="wp-block-heading-inline-css">h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-background,h6.has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}</style>
+<style id="wp-block-spacer-inline-css">.wp-block-spacer{clear:both}</style>
+<style id="wp-block-video-inline-css">.wp-block-video{box-sizing:border-box}.wp-block-video video{vertical-align:middle;width:100%}@supports (position:sticky){.wp-block-video [poster]{object-fit:cover}}.wp-block-video.aligncenter{text-align:center}.wp-block-video :where(figcaption){margin-bottom:1em;margin-top:.5em}</style>
+<style id="wp-block-video-theme-inline-css">.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}</style>
+<style id="wp-block-paragraph-inline-css">.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}</style>
+<style id="wp-block-list-inline-css">ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:1.25em 2.375em}</style>
+<style id="nelio-compare-images-style-inline-css">.wp-block-nelio-compare-images__comparison-wrapper{position:relative}.wp-block-nelio-compare-images__after-image,.wp-block-nelio-compare-images__before-image{line-height:0}.wp-block-nelio-compare-images__before-image{height:100%;margin:0;padding:0;width:100%}.wp-block-nelio-compare-images__before-image img{height:100%;margin:0;-o-object-fit:cover;object-fit:cover;padding:0;width:100%}.wp-block-nelio-compare-images__after-image{position:absolute}.wp-block-nelio-compare-images__after-image img{height:100%;-o-object-fit:cover;object-fit:cover;width:100%}.wp-block-nelio-compare-images__after-image--horizontal{bottom:0;height:100%;right:0;top:0}.wp-block-nelio-compare-images__after-image--horizontal img{-o-object-position:top right;object-position:top right}.wp-block-nelio-compare-images__after-image--vertical{bottom:0;left:0;position:absolute;right:0;width:100%}.wp-block-nelio-compare-images__after-image--vertical img{-o-object-position:bottom left;object-position:bottom left}.wp-block-nelio-compare-images__divider{font-size:2px;position:absolute;transition:opacity .2s ease-in-out}.wp-block-nelio-compare-images__divider--vertical{background:#fff;height:100%;top:0;width:1em}.wp-block-nelio-compare-images__divider--horizontal{background:#fff;height:1em;left:0;width:100%}.wp-block-nelio-compare-images__handler{background:#fff;color:#bbb;cursor:pointer;filter:drop-shadow(0 0 10px #001);font-size:5px;position:absolute;transition:opacity .2s ease-in-out;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.wp-block-nelio-compare-images__handler:after{align-items:center;background:inherit;border-radius:1em;content:"☰";display:block;display:flex;font-size:16px;height:1.5em;justify-content:center;left:50%;position:absolute;top:50%;transform:translate(-50%,-50%) rotate(90deg);width:6em}.wp-block-nelio-compare-images__handler--vertical{height:100%;left:50%;top:0;transform:translateX(-50%);width:1em}.wp-block-nelio-compare-images__handler--horizontal{height:1em;left:0;top:50%;transform:translateY(-50%);width:100%}.wp-block-nelio-compare-images__handler--horizontal:after{transform:translate(-50%,-50%) rotate(0)}.wp-block-nelio-compare-images__caption{text-align:center;width:100%}@media(min-width:50em){.wp-block-nelio-compare-images__handler{opacity:0}.wp-block-nelio-compare-images:hover .wp-block-nelio-compare-images__handler{opacity:1}}</style>
+<style id="wp-block-separator-inline-css">@charset "UTF-8";.wp-block-separator{border:none;border-top:2px solid}:root :where(.wp-block-separator.is-style-dots){height:auto;line-height:1;text-align:center}:root :where(.wp-block-separator.is-style-dots):before{color:currentColor;content:"···";font-family:serif;font-size:1.5em;letter-spacing:2em;padding-left:2em}.wp-block-separator.is-style-dots{background:none!important;border:none!important}</style>
+<style id="wp-block-separator-theme-inline-css">.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}</style>
+<link rel="stylesheet" id="wp-block-image-css" href="./../wp-includes/blocks/image/style.min.css?ver=6.7.1" media="all">
+<style id="wp-block-image-theme-inline-css">:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}</style>
+<style id="wp-block-media-text-inline-css">.wp-block-media-text{box-sizing:border-box;
+  /*!rtl:begin:ignore*/direction:ltr;
+  /*!rtl:end:ignore*/display:grid;grid-template-columns:50% 1fr;grid-template-rows:auto}.wp-block-media-text.has-media-on-the-right{grid-template-columns:1fr 50%}.wp-block-media-text.is-vertically-aligned-top>.wp-block-media-text__content,.wp-block-media-text.is-vertically-aligned-top>.wp-block-media-text__media{align-self:start}.wp-block-media-text.is-vertically-aligned-center>.wp-block-media-text__content,.wp-block-media-text.is-vertically-aligned-center>.wp-block-media-text__media,.wp-block-media-text>.wp-block-media-text__content,.wp-block-media-text>.wp-block-media-text__media{align-self:center}.wp-block-media-text.is-vertically-aligned-bottom>.wp-block-media-text__content,.wp-block-media-text.is-vertically-aligned-bottom>.wp-block-media-text__media{align-self:end}.wp-block-media-text>.wp-block-media-text__media{
+  /*!rtl:begin:ignore*/grid-column:1;grid-row:1;
+  /*!rtl:end:ignore*/margin:0}.wp-block-media-text>.wp-block-media-text__content{direction:ltr;
+  /*!rtl:begin:ignore*/grid-column:2;grid-row:1;
+  /*!rtl:end:ignore*/padding:0 8%;word-break:break-word}.wp-block-media-text.has-media-on-the-right>.wp-block-media-text__media{
+  /*!rtl:begin:ignore*/grid-column:2;grid-row:1
+  /*!rtl:end:ignore*/}.wp-block-media-text.has-media-on-the-right>.wp-block-media-text__content{
+  /*!rtl:begin:ignore*/grid-column:1;grid-row:1
+  /*!rtl:end:ignore*/}.wp-block-media-text__media a{display:inline-block}.wp-block-media-text__media img,.wp-block-media-text__media video{height:auto;max-width:unset;vertical-align:middle;width:100%}.wp-block-media-text.is-image-fill>.wp-block-media-text__media{background-size:cover;height:100%;min-height:250px}.wp-block-media-text.is-image-fill>.wp-block-media-text__media>a{display:block;height:100%}.wp-block-media-text.is-image-fill>.wp-block-media-text__media img{height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;clip:rect(0,0,0,0);border:0}.wp-block-media-text.is-image-fill-element>.wp-block-media-text__media{height:100%;min-height:250px;position:relative}.wp-block-media-text.is-image-fill-element>.wp-block-media-text__media>a{display:block;height:100%}.wp-block-media-text.is-image-fill-element>.wp-block-media-text__media img{height:100%;object-fit:cover;position:absolute;width:100%}@media (max-width:600px){.wp-block-media-text.is-stacked-on-mobile{grid-template-columns:100%!important}.wp-block-media-text.is-stacked-on-mobile>.wp-block-media-text__media{grid-column:1;grid-row:1}.wp-block-media-text.is-stacked-on-mobile>.wp-block-media-text__content{grid-column:1;grid-row:2}}</style>
+<link rel="stylesheet" id="kevinbatdorf-code-block-pro-style-css" href="./../wp-content/plugins/code-block-pro/build/style-index.css?ver=1.13.0" media="all">
+<link rel="stylesheet" id="wp-block-cover-css" href="./../wp-includes/blocks/cover/style.min.css?ver=6.7.1" media="all">
+<style id="wp-block-columns-inline-css">.wp-block-columns{align-items:normal!important;box-sizing:border-box;display:flex;flex-wrap:wrap!important}@media (min-width:782px){.wp-block-columns{flex-wrap:nowrap!important}}.wp-block-columns.are-vertically-aligned-top{align-items:flex-start}.wp-block-columns.are-vertically-aligned-center{align-items:center}.wp-block-columns.are-vertically-aligned-bottom{align-items:flex-end}@media (max-width:781px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:100%!important}}@media (min-width:782px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column[style*=flex-basis]{flex-grow:0}}.wp-block-columns.is-not-stacked-on-mobile{flex-wrap:nowrap!important}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column[style*=flex-basis]{flex-grow:0}:where(.wp-block-columns){margin-bottom:1.75em}:where(.wp-block-columns.has-background){padding:1.25em 2.375em}.wp-block-column{flex-grow:1;min-width:0;overflow-wrap:break-word;word-break:break-word}.wp-block-column.is-vertically-aligned-top{align-self:flex-start}.wp-block-column.is-vertically-aligned-center{align-self:center}.wp-block-column.is-vertically-aligned-bottom{align-self:flex-end}.wp-block-column.is-vertically-aligned-stretch{align-self:stretch}.wp-block-column.is-vertically-aligned-bottom,.wp-block-column.is-vertically-aligned-center,.wp-block-column.is-vertically-aligned-top{width:100%}</style>
+<style id="wp-block-post-content-inline-css">.wp-block-post-content{display:flow-root}</style>
+<style id="wp-emoji-styles-inline-css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<style id="wp-block-library-inline-css">:root{--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,161;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px;--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color)}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip:auto!important;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}</style>
+<link rel="stylesheet" id="glidejs-core-css" href="./../wp-content/plugins/otter-blocks/assets/glide/glide.core.min.css?ver=a6dc7de49a2817fdbed7" media="all">
+<link rel="stylesheet" id="glidejs-theme-css" href="./../wp-content/plugins/otter-blocks/assets/glide/glide.theme.min.css?ver=a6dc7de49a2817fdbed7" media="all">
+<style id="otter-slider-style-inline-css">.wp-block-themeisle-blocks-slider{--height: 400px;--height-tablet: var( --height );--height-mobile: var( --height-tablet );--arrows-color: #333;--arrows-background-color: #fff;--pagination-color: rgba(255,255,255,0.5);--pagination-active-color: #fff;--border-color: black;--border-width: 0;--border-radius: 0;--width: auto;width:var(--width);display:grid}.wp-block-themeisle-blocks-slider .glide__track{border:var(--border-width) solid var(--border-color);border-radius:var(--border-radius);overflow:hidden}.wp-block-themeisle-blocks-slider .glide__slides{height:var(--height);animation:load 4s 3}@keyframes load{0%,100%{background-color:inherit}50%{background-color:#d8d8d8}}@media(min-width: 600px)and (max-width: 960px){.wp-block-themeisle-blocks-slider .glide__slides{height:var(--height-tablet) !important}}@media(max-width: 600px){.wp-block-themeisle-blocks-slider .glide__slides{height:var(--height-mobile) !important}}.wp-block-themeisle-blocks-slider .wp-block-themeisle-blocks-slider-item-wrapper{position:relative}.wp-block-themeisle-blocks-slider .wp-block-themeisle-blocks-slider-item-wrapper figure{height:100%;margin:0}.wp-block-themeisle-blocks-slider .wp-block-themeisle-blocks-slider-item-wrapper figure img{width:100%;height:100%;object-fit:cover}.wp-block-themeisle-blocks-slider .wp-block-themeisle-blocks-slider-item-wrapper figcaption{position:absolute;bottom:0;margin-bottom:0px;width:100%;max-height:100%;overflow-y:auto;z-index:20;white-space:pre-wrap;overflow:auto;padding:40px 10px 9px;color:#fff;text-align:center;font-size:16px;background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3) 70%, transparent);cursor:text}.wp-block-themeisle-blocks-slider .glide__arrows .glide__arrow{background:var(--arrows-background-color);border:none;color:var(--arrows-color);padding:12px;opacity:.75}.wp-block-themeisle-blocks-slider .glide__arrows .glide__arrow:hover{opacity:1}.wp-block-themeisle-blocks-slider .glide__arrows .glide__arrow.glide__arrow--right path{transform:translate(100px, 100px) rotate(180deg)}.wp-block-themeisle-blocks-slider .glide__arrows .glide__arrow svg{display:block;fill:var(--arrows-color)}.wp-block-themeisle-blocks-slider .glide__track .glide__bullet{background-color:var(--pagination-color)}.wp-block-themeisle-blocks-slider .glide__track .glide__bullet--active{background-color:var(--pagination-active-color)}.wp-block-themeisle-blocks-slider .amp-carousel-slide .wp-block-themeisle-blocks-slider-item{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}.wp-block-themeisle-blocks-slider .amp-carousel-slide figcaption{position:absolute;bottom:0;width:100%;max-height:100%;overflow-y:auto;z-index:20;white-space:pre-wrap;overflow:auto;padding:40px 10px 9px;color:#fff;text-align:center;font-size:16px;background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3) 70%, transparent);cursor:text}/*# sourceMappingURL=style.css.map */</style>
+<style id="global-styles-inline-css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--raft-bg: #1c1e26;--wp--preset--color--raft-fg: #FFFFFF;--wp--preset--color--raft-accent: #817bb1;--wp--preset--color--raft-accent-secondary: #2f2d44;--wp--preset--color--raft-bg-inv: #000000;--wp--preset--color--raft-bg-alt: #20222b;--wp--preset--color--raft-fg-alt: #FFFFFF;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 14px;--wp--preset--font-size--medium: 24px;--wp--preset--font-size--large: 28px;--wp--preset--font-size--x-large: 32px;--wp--preset--font-size--normal: 18px;--wp--preset--font-size--huge: 56px;--wp--preset--font-family--body: "Readex Pro", sans-serif;--wp--preset--font-family--source-serif-pro: "Source Serif Pro", serif;--wp--preset--font-family--figtree: "Figtree", sans-serif;--wp--preset--font-family--outfit: "Outfit", sans-serif;--wp--preset--font-family--spline-sans: "spline-sans", sans-serif;--wp--preset--font-family--geologica: "geologica", sans-serif;--wp--preset--font-family--gloock: "gloock", serif;--wp--preset--font-family--spline-sans-mono: "spline-sans-mono", sans-serif;--wp--preset--font-family--lora: "Lora", serif;--wp--preset--spacing--20: clamp(.4rem, 2vw, 0.5rem);--wp--preset--spacing--30: clamp(.6rem, 2.5vw, 1rem);--wp--preset--spacing--40: clamp(1rem, 3vw, 1.5rem);--wp--preset--spacing--50: clamp(1.5rem, 4vw, 2rem);--wp--preset--spacing--60: clamp(2rem, 5vw, 3rem);--wp--preset--spacing--70: clamp(3rem, 6vw, 4rem);--wp--preset--spacing--80: clamp(3rem, 7vw, 5rem);--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);--wp--custom--spacing--baseline: 16px;--wp--custom--spacing--small: min(24px, 6.4vw);--wp--custom--spacing--gap--horizontal: clamp( calc( 1.5 * var( --wp--custom--spacing--baseline ) ), 2.222vw, calc( 2 * var( --wp--custom--spacing--baseline ) ) );--wp--custom--spacing--gap--vertical: clamp( calc( 1.5 * var( --wp--custom--spacing--baseline ) ), 3.333vw, calc( 3 * var( --wp--custom--spacing--baseline ) ) );--wp--custom--spacing--gutter: clamp( calc( 1.5 * var( --wp--custom--spacing--baseline ) ), 3.333vw, calc( 3 * var( --wp--custom--spacing--baseline ) ) );--wp--custom--spacing--outer: var( --wp--custom--spacing--gutter );--wp--custom--typography--font-smoothing--moz: grayscale;--wp--custom--typography--font-smoothing--webkit: antialiased;}:root { --wp--style--global--content-size: 740px;--wp--style--global--wide-size: 960px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.wp-site-blocks) > * { margin-block-start: 24px; margin-block-end: 0; }:where(.wp-site-blocks) > :first-child { margin-block-start: 0; }:where(.wp-site-blocks) > :last-child { margin-block-end: 0; }:root { --wp--style--block-gap: 24px; }:root :where(.is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.is-layout-flow) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.is-layout-constrained) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-flex){gap: 24px;}:root :where(.is-layout-grid){gap: 24px;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{background-color: var(--wp--preset--color--raft-bg);color: var(--wp--preset--color--raft-fg);font-family: var(--wp--preset--font-family--spline-sans);font-size: var(--wp--preset--font-size--normal);font-weight: 400;line-height: 1.7;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){color: var(--wp--preset--color--raft-fg);text-decoration: none;}h1{font-size: var(--wp--preset--font-size--huge);font-weight: 600;line-height: 1.25;}h2{font-size: var(--wp--preset--font-size--x-large);font-weight: 600;line-height: 1.35;}h3{font-size: var(--wp--preset--font-size--large);font-weight: 600;line-height: 1.35;}h4{font-size: var(--wp--preset--font-size--medium);font-weight: 600;line-height: 1.4;}h5{font-size: var(--wp--preset--font-size--normal);font-weight: 600;line-height: 1.55;}h6{font-size: var(--wp--preset--font-size--small);font-weight: 600;line-height: 1.6;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}:root :where(.wp-element-caption, .wp-block-audio figcaption, .wp-block-embed figcaption, .wp-block-gallery figcaption, .wp-block-image figcaption, .wp-block-table figcaption, .wp-block-video figcaption){color: var(--wp--preset--color--raft-fg);font-size: var(--wp--preset--font-size--small);}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-raft-bg-color{color: var(--wp--preset--color--raft-bg) !important;}.has-raft-fg-color{color: var(--wp--preset--color--raft-fg) !important;}.has-raft-accent-color{color: var(--wp--preset--color--raft-accent) !important;}.has-raft-accent-secondary-color{color: var(--wp--preset--color--raft-accent-secondary) !important;}.has-raft-bg-inv-color{color: var(--wp--preset--color--raft-bg-inv) !important;}.has-raft-bg-alt-color{color: var(--wp--preset--color--raft-bg-alt) !important;}.has-raft-fg-alt-color{color: var(--wp--preset--color--raft-fg-alt) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-raft-bg-background-color{background-color: var(--wp--preset--color--raft-bg) !important;}.has-raft-fg-background-color{background-color: var(--wp--preset--color--raft-fg) !important;}.has-raft-accent-background-color{background-color: var(--wp--preset--color--raft-accent) !important;}.has-raft-accent-secondary-background-color{background-color: var(--wp--preset--color--raft-accent-secondary) !important;}.has-raft-bg-inv-background-color{background-color: var(--wp--preset--color--raft-bg-inv) !important;}.has-raft-bg-alt-background-color{background-color: var(--wp--preset--color--raft-bg-alt) !important;}.has-raft-fg-alt-background-color{background-color: var(--wp--preset--color--raft-fg-alt) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-raft-bg-border-color{border-color: var(--wp--preset--color--raft-bg) !important;}.has-raft-fg-border-color{border-color: var(--wp--preset--color--raft-fg) !important;}.has-raft-accent-border-color{border-color: var(--wp--preset--color--raft-accent) !important;}.has-raft-accent-secondary-border-color{border-color: var(--wp--preset--color--raft-accent-secondary) !important;}.has-raft-bg-inv-border-color{border-color: var(--wp--preset--color--raft-bg-inv) !important;}.has-raft-bg-alt-border-color{border-color: var(--wp--preset--color--raft-bg-alt) !important;}.has-raft-fg-alt-border-color{border-color: var(--wp--preset--color--raft-fg-alt) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-normal-font-size{font-size: var(--wp--preset--font-size--normal) !important;}.has-huge-font-size{font-size: var(--wp--preset--font-size--huge) !important;}.has-body-font-family{font-family: var(--wp--preset--font-family--body) !important;}.has-source-serif-pro-font-family{font-family: var(--wp--preset--font-family--source-serif-pro) !important;}.has-figtree-font-family{font-family: var(--wp--preset--font-family--figtree) !important;}.has-outfit-font-family{font-family: var(--wp--preset--font-family--outfit) !important;}.has-spline-sans-font-family{font-family: var(--wp--preset--font-family--spline-sans) !important;}.has-geologica-font-family{font-family: var(--wp--preset--font-family--geologica) !important;}.has-gloock-font-family{font-family: var(--wp--preset--font-family--gloock) !important;}.has-spline-sans-mono-font-family{font-family: var(--wp--preset--font-family--spline-sans-mono) !important;}.has-lora-font-family{font-family: var(--wp--preset--font-family--lora) !important;}</style>
+<style id="core-block-supports-inline-css">.wp-container-core-navigation-is-layout-1{gap:32px;justify-content:center;}.wp-container-core-social-links-is-layout-1{gap:20px 20px;justify-content:flex-start;}.wp-container-core-group-is-layout-2{flex-wrap:nowrap;justify-content:center;}.wp-elements-5ef9abdff85d925e5ef014fb706cab46 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--light-green-cyan);}.wp-elements-09065368c40878652a04c06062262104 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--cyan-bluish-gray);}.wp-elements-09065368c40878652a04c06062262104 a:where(:not(.wp-element-button)):hover{color:var(--wp--preset--color--pale-cyan-blue);}.wp-elements-23bf9104f7858a6f655d531dc42e8665 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--cyan-bluish-gray);}.wp-elements-23bf9104f7858a6f655d531dc42e8665 a:where(:not(.wp-element-button)):hover{color:var(--wp--preset--color--pale-cyan-blue);}.wp-elements-11f276c606cc4de4dc7d74358d93025b a:where(:not(.wp-element-button)){color:var(--wp--preset--color--cyan-bluish-gray);}.wp-elements-11f276c606cc4de4dc7d74358d93025b a:where(:not(.wp-element-button)):hover{color:var(--wp--preset--color--pale-cyan-blue);}.wp-elements-0a79899d58ea4d6d5c15a3461a0cd64b a:where(:not(.wp-element-button)){color:var(--wp--preset--color--cyan-bluish-gray);}.wp-elements-0a79899d58ea4d6d5c15a3461a0cd64b a:where(:not(.wp-element-button)):hover{color:var(--wp--preset--color--pale-cyan-blue);}.wp-elements-0f6d7832ff6c0aea71e7b7fd650c0f95 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--cyan-bluish-gray);}.wp-elements-0f6d7832ff6c0aea71e7b7fd650c0f95 a:where(:not(.wp-element-button)):hover{color:var(--wp--preset--color--pale-cyan-blue);}.wp-elements-438290483d999b262cd4fcab1773fb8d a:where(:not(.wp-element-button)){color:var(--wp--preset--color--luminous-vivid-amber);}.wp-container-core-column-is-layout-1 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-1 > * + *{margin-block-start:var(--wp--preset--spacing--40);margin-block-end:0;}.wp-container-core-columns-is-layout-1{flex-wrap:nowrap;}.wp-container-core-group-is-layout-6 > .alignfull{margin-right:calc(var(--wp--preset--spacing--40) * -1);margin-left:calc(var(--wp--preset--spacing--40) * -1);}.wp-container-core-group-is-layout-6 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-6 > * + *{margin-block-start:var(--wp--preset--spacing--50);margin-block-end:0;}.wp-container-core-columns-is-layout-2{flex-wrap:nowrap;}.wp-container-core-post-content-is-layout-1 > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width:100%;margin-left:auto !important;margin-right:auto !important;}.wp-container-core-post-content-is-layout-1 > .alignwide{max-width:100%;}.wp-container-core-post-content-is-layout-1 .alignfull{max-width:none;}.wp-container-core-group-is-layout-8 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-8 > * + *{margin-block-start:0;margin-block-end:0;}.wp-container-core-navigation-is-layout-2{flex-wrap:nowrap;gap:32px;justify-content:flex-end;}.wp-container-core-group-is-layout-11{justify-content:space-between;}.wp-container-core-group-is-layout-12 > .alignfull{margin-right:calc(24px * -1);margin-left:calc(24px * -1);}</style>
+<style id="wp-block-template-skip-link-inline-css">.skip-link.screen-reader-text {
+			border: 0;
+			clip: rect(1px,1px,1px,1px);
+			clip-path: inset(50%);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute !important;
+			width: 1px;
+			word-wrap: normal !important;
+		}
+
+		.skip-link.screen-reader-text:focus {
+			background-color: #eee;
+			clip: auto !important;
+			clip-path: none;
+			color: #444;
+			display: block;
+			font-size: 1em;
+			height: auto;
+			left: 5px;
+			line-height: normal;
+			padding: 15px 23px 14px;
+			text-decoration: none;
+			top: 5px;
+			width: auto;
+			z-index: 100000;
+		}</style>
+<link rel="stylesheet" id="raft-style-css" href="./../wp-content/themes/raft/assets/css/build/style.css?ver=1.1.7" media="all">
+<script src="./../wp-content/plugins/nelio-compare-images/build/view.js?ver=67f8e141a345d8e5cc0bda7b2a189795" id="nelio-compare-images-view-script-js" defer data-wp-strategy="defer"></script>
+<link rel="https://api.w.org/" href="./../wp-json/index.html">
+<link rel="alternate" title="JSON" type="application/json" href="./../wp-json/wp/v2/pages/158/index.html">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="./../xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.7.1">
+<link rel="canonical" href="./index.html">
+<link rel="shortlink" href="./../index.html?p=158">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="./../wp-json/oembed/1.0/embed/index.html?url=https%3A%2F%2F%2Findirect-lighting%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="./../wp-json/oembed/1.0/embed/index.html?url=https%3A%2F%2F%2Findirect-lighting%2F#038;format=xml">
+<script type="importmap" id="wp-importmap">{"imports":{"@wordpress\/interactivity":".\/\/wp-includes\/js\/dist\/script-modules\/interactivity\/index.min.js?ver=06b8f695ef48ab2d9277"}}</script>
+<script type="module" src="./../wp-includes/js/dist/script-modules/block-library/navigation/view.min.js?ver=8ff192874fc8910a284c" id="@wordpress/block-library/navigation/view-js-module"></script>
+<link rel="modulepreload" href="./../wp-includes/js/dist/script-modules/interactivity/index.min.js?ver=06b8f695ef48ab2d9277" id="@wordpress/interactivity-js-modulepreload">
+<style class="wp-fonts-local">@font-face{font-family:"Readex Pro";font-style:normal;font-weight:160 700;font-display:swap;src:url('./../wp-content/themes/raft/assets/fonts/readex-pro/ReadexPro-VariableFont_wght.ttf') format('truetype');font-stretch:normal;}
+@font-face{font-family:"Source Serif Pro";font-style:normal;font-weight:200 900;font-display:fallback;src:url('./../wp-content/themes/raft/assets/fonts/source-serif-pro/SourceSerif4Variable-Roman.ttf.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:"Source Serif Pro";font-style:italic;font-weight:200 900;font-display:fallback;src:url('./../wp-content/themes/raft/assets/fonts/source-serif-pro/SourceSerif4Variable-Italic.ttf.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Figtree;font-style:normal;font-weight:300 900;font-display:fallback;src:url('./../wp-content/themes/raft/assets/fonts/figtree/Figtree-VariableFont_wght.ttf') format('truetype');font-stretch:normal;}
+@font-face{font-family:Figtree;font-style:italic;font-weight:300 900;font-display:fallback;src:url('./../wp-content/themes/raft/assets/fonts/figtree/Figtree-Italic-VariableFont_wght.ttf') format('truetype');font-stretch:normal;}
+@font-face{font-family:Outfit;font-style:normal;font-weight:100 900;font-display:swap;src:url('./../wp-content/themes/raft/assets/fonts/outfit/Outfit-VariableFont_wght.ttf') format('truetype');font-stretch:normal;}
+@font-face{font-family:spline-sans;font-style:normal;font-weight:300 900;font-display:swap;src:url('./../wp-content/themes/raft/assets/fonts/spline-sans/SplineSans-VariableFont_wght.ttf') format('truetype');font-stretch:normal;}
+@font-face{font-family:geologica;font-style:normal;font-weight:300 900;font-display:swap;src:url('./../wp-content/themes/raft/assets/fonts/geologica/Geologica-VariableFont_CRSV,SHRP,slnt,wght.ttf') format('truetype');font-stretch:normal;}
+@font-face{font-family:gloock;font-style:normal;font-weight:400;font-display:swap;src:url('./../wp-content/themes/raft/assets/fonts/gloock/Gloock-Regular.ttf') format('truetype');font-stretch:normal;}
+@font-face{font-family:spline-sans-mono;font-style:normal;font-weight:400 800;font-display:swap;src:url('./../wp-content/themes/raft/assets/fonts/spline-sans-mono/SplineSansMono-VariableFont_wght.ttf') format('truetype');font-stretch:normal;}
+@font-face{font-family:spline-sans-mono;font-style:italic;font-weight:400 800;font-display:fallback;src:url('./../wp-content/themes/raft/assets/fonts/spline-sans-mono/SplineSansMono-Italic-VariableFont_wght.ttf') format('truetype');font-stretch:normal;}
+@font-face{font-family:Lora;font-style:normal;font-weight:400 700;font-display:fallback;src:url('./../wp-content/themes/raft/assets/fonts/lora/Lora-VariableFont_wght.ttf') format('truetype');font-stretch:normal;}
+@font-face{font-family:Lora;font-style:italic;font-weight:400 700;font-display:fallback;src:url('./../wp-content/themes/raft/assets/fonts/lora/Lora-Italic-VariableFont_wght.ttf') format('truetype');font-stretch:normal;}</style>
+<link rel="icon" href="./../wp-content/uploads/2024/04/android-chrome-512x512-1-150x150.png" sizes="32x32">
+<link rel="icon" href="./../wp-content/uploads/2024/04/android-chrome-512x512-1-300x300.png" sizes="192x192">
+<link rel="apple-touch-icon" href="./../wp-content/uploads/2024/04/android-chrome-512x512-1-300x300.png">
+<meta name="msapplication-TileImage" content="./../wp-content/uploads/2024/04/android-chrome-512x512-1-300x300.png">
+</head>
+
+<body class="page-template page-template-template-plain page page-id-158 wp-custom-logo wp-embed-responsive">
+
+<div class="wp-site-blocks">
+<header class="wp-block-template-part">
+<div class="wp-block-group has-raft-accent-secondary-background-color has-background is-layout-constrained wp-block-group-is-layout-constrained" style="margin-top:0px;margin-bottom:0px;padding-top:20px;padding-bottom:20px">
+<div class="wp-block-group alignwide is-content-justification-center is-nowrap is-layout-flex wp-container-core-group-is-layout-2 wp-block-group-is-layout-flex">
+<div class="wp-block-group is-layout-flex wp-block-group-is-layout-flex">
+<nav class="is-responsive items-justified-center wp-block-navigation is-content-justification-center is-layout-flex wp-container-core-navigation-is-layout-1 wp-block-navigation-is-layout-flex" aria-label="Sidhuvud-navigering 6" data-wp-interactive="core/navigation" data-wp-context='{"overlayOpenedBy":{"click":false,"hover":false,"focus":false},"type":"overlay","roleAttribute":"","ariaLabel":"Menu"}'><button aria-haspopup="dialog" aria-label="Open menu" class="wp-block-navigation__responsive-container-open " data-wp-on-async--click="actions.openMenuOnClick" data-wp-on--keydown="actions.handleMenuKeydown"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="7.5" width="16" height="1.5"></rect><rect x="4" y="15" width="16" height="1.5"></rect></svg></button>
+				<div class="wp-block-navigation__responsive-container  " id="modal-1" data-wp-class--has-modal-open="state.isMenuOpen" data-wp-class--is-menu-open="state.isMenuOpen" data-wp-watch="callbacks.initMenu" data-wp-on--keydown="actions.handleMenuKeydown" data-wp-on-async--focusout="actions.handleMenuFocusout" tabindex="-1">
+					<div class="wp-block-navigation__responsive-close" tabindex="-1">
+						<div class="wp-block-navigation__responsive-dialog" data-wp-bind--aria-modal="state.ariaModal" data-wp-bind--aria-label="state.ariaLabel" data-wp-bind--role="state.roleAttribute">
+							<button aria-label="Close menu" class="wp-block-navigation__responsive-container-close" data-wp-on-async--click="actions.closeMenuOnClick"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="m13.06 12 6.47-6.47-1.06-1.06L12 10.94 5.53 4.47 4.47 5.53 10.94 12l-6.47 6.47 1.06 1.06L12 13.06l6.47 6.47 1.06-1.06L13.06 12Z"></path></svg></button>
+							<div class="wp-block-navigation__responsive-container-content" data-wp-watch="callbacks.focusFirstElement" id="modal-1-content">
+								<ul class="wp-block-navigation__container is-responsive items-justified-center wp-block-navigation">
+<li class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="./../index.html"><span class="wp-block-navigation-item__label">Home</span></a></li>
+<li class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="./../group-projects/index.html"><span class="wp-block-navigation-item__label">Group Projects</span></a></li>
+<li class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="./../about/index.html"><span class="wp-block-navigation-item__label">Contact</span></a></li>
+<li class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="./../wp-content/uploads/2024/11/Anton_Eriksson_Resume.pdf" target="_blank"><span class="wp-block-navigation-item__label">Resumé</span></a></li>
+</ul>
+							</div>
+						</div>
+					</div>
+				</div></nav>
+
+
+<ul class="wp-block-social-links has-icon-color is-style-logos-only is-horizontal is-content-justification-left is-layout-flex wp-container-core-social-links-is-layout-1 wp-block-social-links-is-layout-flex">
+<li style="color: var(--wp--preset--color--raft-fg); " class="wp-social-link wp-social-link-linkedin has-raft-fg-color wp-block-social-link"><a href="https://www.linkedin.com/in/anton-eriksson-079795239/" class="wp-block-social-link-anchor"><svg width="24" height="24" viewbox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M19.7,3H4.3C3.582,3,3,3.582,3,4.3v15.4C3,20.418,3.582,21,4.3,21h15.4c0.718,0,1.3-0.582,1.3-1.3V4.3 C21,3.582,20.418,3,19.7,3z M8.339,18.338H5.667v-8.59h2.672V18.338z M7.004,8.574c-0.857,0-1.549-0.694-1.549-1.548 c0-0.855,0.691-1.548,1.549-1.548c0.854,0,1.547,0.694,1.547,1.548C8.551,7.881,7.858,8.574,7.004,8.574z M18.339,18.338h-2.669 v-4.177c0-0.996-0.017-2.278-1.387-2.278c-1.389,0-1.601,1.086-1.601,2.206v4.249h-2.667v-8.59h2.559v1.174h0.037 c0.356-0.675,1.227-1.387,2.526-1.387c2.703,0,3.203,1.779,3.203,4.092V18.338z"></path></svg><span class="wp-block-social-link-label screen-reader-text">LinkedIn</span></a></li>
+
+<li style="color: var(--wp--preset--color--raft-fg); " class="wp-social-link wp-social-link-github has-raft-fg-color wp-block-social-link"><a href="https://github.com/nissekaka" class="wp-block-social-link-anchor"><svg width="24" height="24" viewbox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M12,2C6.477,2,2,6.477,2,12c0,4.419,2.865,8.166,6.839,9.489c0.5,0.09,0.682-0.218,0.682-0.484 c0-0.236-0.009-0.866-0.014-1.699c-2.782,0.602-3.369-1.34-3.369-1.34c-0.455-1.157-1.11-1.465-1.11-1.465 c-0.909-0.62,0.069-0.608,0.069-0.608c1.004,0.071,1.532,1.03,1.532,1.03c0.891,1.529,2.341,1.089,2.91,0.833 c0.091-0.647,0.349-1.086,0.635-1.337c-2.22-0.251-4.555-1.111-4.555-4.943c0-1.091,0.39-1.984,1.03-2.682 C6.546,8.54,6.202,7.524,6.746,6.148c0,0,0.84-0.269,2.75,1.025C10.295,6.95,11.15,6.84,12,6.836 c0.85,0.004,1.705,0.114,2.504,0.336c1.909-1.294,2.748-1.025,2.748-1.025c0.546,1.376,0.202,2.394,0.1,2.646 c0.64,0.699,1.026,1.591,1.026,2.682c0,3.841-2.337,4.687-4.565,4.935c0.359,0.307,0.679,0.917,0.679,1.852 c0,1.335-0.012,2.415-0.012,2.741c0,0.269,0.18,0.579,0.688,0.481C19.138,20.161,22,16.416,22,12C22,6.477,17.523,2,12,2z"></path></svg><span class="wp-block-social-link-label screen-reader-text">GitHub</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</header>
+
+
+<div class="wp-block-group is-layout-flow wp-container-core-group-is-layout-8 wp-block-group-is-layout-flow" style="margin-top:0;margin-bottom:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><div class="entry-content wp-block-post-content is-layout-constrained wp-container-core-post-content-is-layout-1 wp-block-post-content-is-layout-constrained">
+<div class="wp-block-group alignwide is-layout-constrained wp-block-group-is-layout-constrained">
+<div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-2 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:100%">
+<div class="wp-block-group alignwide has-raft-bg-alt-background-color has-background is-layout-constrained wp-container-core-group-is-layout-6 wp-block-group-is-layout-constrained" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--40)">
+<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
+<h2 class="wp-block-heading has-text-align-center has-light-green-cyan-color has-text-color has-link-color has-huge-font-size wp-elements-5ef9abdff85d925e5ef014fb706cab46">A Study In Indirect Lighting</h2>
+
+
+
+<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
+</div>
+
+
+
+<div class="wp-block-group alignwide is-layout-flow wp-block-group-is-layout-flow">
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-1 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-container-core-column-is-layout-1 wp-block-column-is-layout-flow">
+<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2024/04/b4aaf980-c4b9-4fd8-b41a-911caf0778c8-encode-1712820641225.mp4"></video></figure>
+
+
+
+<p class="has-link-color wp-elements-09065368c40878652a04c06062262104">This project was created in my own DirectX 11 graphics engine, <a href="https://github.com/nissekaka/Kege" data-type="link" data-id="https://github.com/nissekaka/Kege" target="_blank" rel="noreferrer noopener">source code available on GitHub</a>.</p>
+
+
+
+<h4 class="wp-block-heading">Contents:</h4>
+
+
+
+<ul class="has-link-color wp-block-list wp-elements-23bf9104f7858a6f655d531dc42e8665">
+<li><a href="#rsm" data-type="internal" data-id="#rsm">Reflective Shadow Maps</a></li>
+
+
+
+<li><a href="#ssi" data-type="internal" data-id="#ssi">Screen-Space Interpolation</a></li>
+
+
+
+<li><a href="#noise" data-type="internal" data-id="#noise">Noise</a></li>
+
+
+
+<li><a href="#taa" data-type="internal" data-id="#taa">Temporal Anti-Aliasing</a></li>
+
+
+
+<li><a href="#volumetric">Volumetric Light</a></li>
+</ul>
+
+
+
+<h3 class="wp-block-heading has-text-align-left">Introduction</h3>
+
+
+
+<p class="has-text-align-left has-link-color wp-elements-11f276c606cc4de4dc7d74358d93025b">Indirect lighting first piqued my interest when I watched Alexander Sannikov’s talk from ExileCon 2023 about <a href="https://www.youtube.com/watch?v=TrHHTQqmAaM" data-type="link" data-id="https://www.youtube.com/watch?v=TrHHTQqmAaM" target="_blank" rel="noreferrer noopener">rendering Path of Exile 2</a>. When I first saw the part about global illumination, I was filled with excitement, jumping up and down in my chair. I remember thinking, &#8216;That&#8217;s so cool!&#8217; And as always when I feel that way about something, it was followed by, &#8216;I wanna do that!&#8217;</p>
+
+
+
+<p>The thing I find most fascinating about lighting and indirect lighting, is how much it can convey emotion and tell stories just on its own. An simple scene can look amazing with the right lighting, and as a programmer who particularly enjoys the visual aspect of games, this was something I wanted to explore and learn more about.</p>
+
+
+
+<p class="has-text-align-left has-link-color wp-elements-0a79899d58ea4d6d5c15a3461a0cd64b">I decided to research different kinds of global illumination. I read about voxel-based techniques, spherical harmonic lighting, reflective shadow maps and virtual point lights. The best looking ones also tended to be the most advanced, so ultimately I decided a good starting point on my indirect lighting-journey would be to implement a version based on reflective shadow maps. I found it to be a good fit for two reasons: the scope seemed reasonable, but more importantly it allows for dynamic lighting.</p>
+
+
+
+<figure class="wp-block-nelio-compare-images alignwide"><div class="wp-block-nelio-compare-images__comparison-wrapper wp-block-nelio-compare-images__comparison-wrapper--horizontally" data-position="50" data-direction="horizontal">
+<div class="wp-block-nelio-compare-images__before-image wp-block-nelio-compare-images__before-image--horizontal"><img fetchpriority="high" decoding="async" width="1920" height="1080" class="wp-image-224" src="./../wp-content/uploads/2024/04/Game_Release_xeEDe3nD3G.jpg" alt="" srcset="./../wp-content/uploads/2024/04/Game_Release_xeEDe3nD3G.jpg 1920w, ./../wp-content/uploads/2024/04/Game_Release_xeEDe3nD3G-300x169.jpg 300w, ./../wp-content/uploads/2024/04/Game_Release_xeEDe3nD3G-1024x576.jpg 1024w, ./../wp-content/uploads/2024/04/Game_Release_xeEDe3nD3G-768x432.jpg 768w, ./../wp-content/uploads/2024/04/Game_Release_xeEDe3nD3G-1536x864.jpg 1536w" sizes="(max-width: 1920px) 100vw, 1920px"></div>
+<div class="wp-block-nelio-compare-images__after-image wp-block-nelio-compare-images__after-image--horizontal" style="width:50%"><img decoding="async" width="1920" height="1080" class="wp-image-223" src="./../wp-content/uploads/2024/04/Game_Release_tmNo5Gvya5.jpg" alt="" srcset="./../wp-content/uploads/2024/04/Game_Release_tmNo5Gvya5.jpg 1920w, ./../wp-content/uploads/2024/04/Game_Release_tmNo5Gvya5-300x169.jpg 300w, ./../wp-content/uploads/2024/04/Game_Release_tmNo5Gvya5-1024x576.jpg 1024w, ./../wp-content/uploads/2024/04/Game_Release_tmNo5Gvya5-768x432.jpg 768w, ./../wp-content/uploads/2024/04/Game_Release_tmNo5Gvya5-1536x864.jpg 1536w" sizes="(max-width: 1920px) 100vw, 1920px"></div>
+<div class="wp-block-nelio-compare-images__divider wp-block-nelio-compare-images__divider--vertical"></div>
+<div class="wp-block-nelio-compare-images__handler wp-block-nelio-compare-images__handler--vertical"></div>
+</div>
+<figcaption class="wp-block-nelio-compare-images__caption">Comparison between without and with indirect lighting.</figcaption></figure>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+
+<h3 class="wp-block-heading has-text-align-left" id="rsm">Reflective Shadow Maps</h3>
+
+
+
+<p class="has-link-color wp-elements-0f6d7832ff6c0aea71e7b7fd650c0f95">I based my implementation on <a href="http://www.klayge.org/material/3_12/GI/rsm.pdf" data-type="link" data-id="http://www.klayge.org/material/3_12/GI/rsm.pdf" target="_blank" rel="noreferrer noopener">this paper</a> by Dachsbacher and Stamminger.</p>
+
+
+
+<h4 class="wp-block-heading">What is a reflective shadow map?</h4>
+
+
+
+<p>A reflective shadow map is an extension to a standard shadow map, where each pixel is considered as an indirect light source. Whereas a standard shadow map only utilises a depth buffer, a reflective shadow map expands on this with world space coordinates, normal and flux, where flux is the product of the pixel colour and the colour of the light source.</p>
+
+
+
+<figure class="wp-block-image size-large is-resized" id="rsm-dir"><img decoding="async" width="1024" height="608" src="./../wp-content/uploads/2024/04/Game_Release_zfAZvYsFMT-1024x608.png" alt="" class="wp-image-539" style="width:959px;height:auto" srcset="./../wp-content/uploads/2024/04/Game_Release_zfAZvYsFMT-1024x608.png 1024w, ./../wp-content/uploads/2024/04/Game_Release_zfAZvYsFMT-300x178.png 300w, ./../wp-content/uploads/2024/04/Game_Release_zfAZvYsFMT-768x456.png 768w, ./../wp-content/uploads/2024/04/Game_Release_zfAZvYsFMT.png 1055w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption class="wp-element-caption">The components of the reflective shadow map: world position, normal, flux and depth.</figcaption></figure>
+
+
+
+<h4 class="wp-block-heading">How do we use it?</h4>
+
+
+
+<p>The evaluation of the indirect light happens in a pixel shader. We do that by using the data stored in the reflective shadow map. For every pixel p, where x and n is the surface point and normal, the world space position xp, the normal np and the flux Φp we can evaluate the indirect light like so:</p>
+
+
+
+<figure class="wp-block-image aligncenter size-full is-resized"><img loading="lazy" decoding="async" width="374" height="55" src="./../wp-content/uploads/2024/04/firefox_WwoqLuqHiO.png" alt="" class="wp-image-168" style="width:416px;height:auto" srcset="./../wp-content/uploads/2024/04/firefox_WwoqLuqHiO.png 374w, ./../wp-content/uploads/2024/04/firefox_WwoqLuqHiO-300x44.png 300w" sizes="auto, (max-width: 374px) 100vw, 374px"></figure>
+
+
+
+<p>To do that, we need our graphics engine to utilise deferred rendering, because for each pixel we need some information from the G-buffer: the pixel’s colour, world position and normal. After our reflective shadow map pass and G-buffer pass, we can start evaluating the indirect light.</p>
+
+
+
+<p>The G-buffer (not showing depth) that is used:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="926" height="616" src="./../wp-content/uploads/2024/04/gbuffer-1.png" alt="" class="wp-image-538" srcset="./../wp-content/uploads/2024/04/gbuffer-1.png 926w, ./../wp-content/uploads/2024/04/gbuffer-1-300x200.png 300w, ./../wp-content/uploads/2024/04/gbuffer-1-768x511.png 768w" sizes="auto, (max-width: 926px) 100vw, 926px"></figure>
+
+
+
+<p>So let&#8217;s say we evaluate a pixel on the floor underneath the left red curtain, where the red arrow is pointing. For this pixel we take samples around it from the reflective shadow map. We do this by projecting the world position of the pixel into the reflective shadow map. The world position x and the normal n comes from this G-buffer view.</p>
+
+
+
+<div class="wp-block-media-text is-stacked-on-mobile is-vertically-aligned-top" id="rsm-dir">
+<figure class="wp-block-media-text__media"><img loading="lazy" decoding="async" width="300" height="178" src="./../wp-content/uploads/2024/04/Game_Release_zfAZvYsFMT-300x178.png" alt="" class="wp-image-539 size-full" srcset="./../wp-content/uploads/2024/04/Game_Release_zfAZvYsFMT-300x178.png 300w, ./../wp-content/uploads/2024/04/Game_Release_zfAZvYsFMT-1024x608.png 1024w, ./../wp-content/uploads/2024/04/Game_Release_zfAZvYsFMT-768x456.png 768w, ./../wp-content/uploads/2024/04/Game_Release_zfAZvYsFMT.png 1055w" sizes="auto, (max-width: 300px) 100vw, 300px"></figure><div class="wp-block-media-text__content">
+<p>Then the position xp, normal xn and flux Φp is sampled from the reflective shadow map that is from the light&#8217;s perspective, as many times as we choose to, in a pattern that suits or needs. The evaluated indirect lighting at the pixel the red arrow is pointing at will be accumulated from all those samples.</p>
+</div>
+</div>
+
+
+
+<p>So to demonstrate this further. In the figure below, x is the world position for the pixel we are currently evaluating, and n is the normal. Here we take two samples from the reflective shadow map at nearby pixels p and q. The point x on the floor receives light from p but not from q, since the dot product in the first max function <code>max(0, dot(np, x - xp))</code> will be negative resulting in it returning 0.</p>
+
+
+
+<figure class="wp-block-image aligncenter size-full is-resized"><img loading="lazy" decoding="async" width="704" height="564" src="./../wp-content/uploads/2024/04/Namnlos.png" alt="" class="wp-image-169" style="width:548px;height:auto" srcset="./../wp-content/uploads/2024/04/Namnlos.png 704w, ./../wp-content/uploads/2024/04/Namnlos-300x240.png 300w" sizes="auto, (max-width: 704px) 100vw, 704px"><figcaption class="wp-element-caption">Our perspective.</figcaption></figure>
+
+
+
+<figure class="wp-block-image aligncenter size-full is-resized"><img loading="lazy" decoding="async" width="704" height="564" src="./../wp-content/uploads/2024/04/Namnlos2.png" alt="" class="wp-image-170" style="width:548px;height:auto" srcset="./../wp-content/uploads/2024/04/Namnlos2.png 704w, ./../wp-content/uploads/2024/04/Namnlos2-300x240.png 300w" sizes="auto, (max-width: 704px) 100vw, 704px"><figcaption class="wp-element-caption">The light&#8217;s perspective.</figcaption></figure>
+
+
+
+<figure class="wp-block-image aligncenter size-full"><img loading="lazy" decoding="async" width="392" height="389" src="./../wp-content/uploads/2024/04/Namnlos3.png" alt="" class="wp-image-171" srcset="./../wp-content/uploads/2024/04/Namnlos3.png 392w, ./../wp-content/uploads/2024/04/Namnlos3-300x298.png 300w, ./../wp-content/uploads/2024/04/Namnlos3-150x150.png 150w" sizes="auto, (max-width: 392px) 100vw, 392px"><figcaption class="wp-element-caption">Sampling pattern example.</figcaption></figure>
+
+
+
+<p>The more samples we take per pixel, the more our graphics card starts to suffer. To get a relatively good result we need to take at least a couple of hundred samples per pixel. Let’s say we take 400 samples per pixel at a resolution of 1920 by 1080. That’s 829 440 000 samples per texture, and we have three textures (world position, normal and flux), so that’s a total of 2 488 320 000 samples per light. Horribly inefficient!</p>
+
+
+
+<p>The paper has a solution for this: We take the samples from a lower resolution and then scale it back up. It’s way more efficient, but the result isn’t very pretty. Here, the indirect lighting is sampled at a low resolution and then upscaled which results in a poor quality image.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="576" src="./../wp-content/uploads/2024/04/Game_Release_FHs9HcVDk9-1024x576.jpg" alt="" class="wp-image-540" srcset="./../wp-content/uploads/2024/04/Game_Release_FHs9HcVDk9-1024x576.jpg 1024w, ./../wp-content/uploads/2024/04/Game_Release_FHs9HcVDk9-300x169.jpg 300w, ./../wp-content/uploads/2024/04/Game_Release_FHs9HcVDk9-768x432.jpg 768w, ./../wp-content/uploads/2024/04/Game_Release_FHs9HcVDk9-1536x864.jpg 1536w, ./../wp-content/uploads/2024/04/Game_Release_FHs9HcVDk9.jpg 1920w" sizes="auto, (max-width: 1024px) 100vw, 1024px"></figure>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+
+<h4 class="wp-block-heading" id="ssi">Screen-Space Interpolation</h4>
+
+
+
+<p>In order to improve the image quality, the authors of the paper solve this with screen-space interpolation. That means we check for each pixel whether the indirect light can be interpolated from the four surrounding low resolution samples. Those samples are regarded as suitable for interpolation if the sample’s normal is similar to the pixel’s normal and if its world space position is close to the pixel’s position.</p>
+
+
+
+<p>Basically, if we would look at the very edge of our monitor, and then move our gaze an imaginary pixel further out so that we&#8217;re looking outside and past the screen, chances are we are looking at a wall or a plant or a person. The world positions and normals of those two points probably differ quite significantly. The resulting pixel from interpolation would be a mix of your monitor and the wall (or plant or person), which would result in weird artefacts. If they are not suitable for interpolation, we leave these pixels for the last pass where we sample the pixel at full resolution.</p>
+
+
+
+<p>Here those pixels not suitable for interpolation are marked with red:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="900" height="506" src="./../wp-content/uploads/2024/04/red_SSI.png" alt="" class="wp-image-623" srcset="./../wp-content/uploads/2024/04/red_SSI.png 900w, ./../wp-content/uploads/2024/04/red_SSI-300x169.png 300w, ./../wp-content/uploads/2024/04/red_SSI-768x432.png 768w" sizes="auto, (max-width: 900px) 100vw, 900px"></figure>
+
+
+
+<p>Here is a comparison between an image without screen-space interpolation on the left, and with screen-space interpolation on the right:</p>
+
+
+
+<figure class="wp-block-nelio-compare-images"><div class="wp-block-nelio-compare-images__comparison-wrapper wp-block-nelio-compare-images__comparison-wrapper--horizontally" data-position="50" data-direction="horizontal">
+<div class="wp-block-nelio-compare-images__before-image wp-block-nelio-compare-images__before-image--horizontal"><img loading="lazy" decoding="async" width="900" height="506" class="wp-image-624" src="./../wp-content/uploads/2024/04/without_SSI.png" alt="" srcset="./../wp-content/uploads/2024/04/without_SSI.png 900w, ./../wp-content/uploads/2024/04/without_SSI-300x169.png 300w, ./../wp-content/uploads/2024/04/without_SSI-768x432.png 768w" sizes="auto, (max-width: 900px) 100vw, 900px"></div>
+<div class="wp-block-nelio-compare-images__after-image wp-block-nelio-compare-images__after-image--horizontal" style="width:50%"><img loading="lazy" decoding="async" width="900" height="506" class="wp-image-625" src="./../wp-content/uploads/2024/04/with_SSI.png" alt="" srcset="./../wp-content/uploads/2024/04/with_SSI.png 900w, ./../wp-content/uploads/2024/04/with_SSI-300x169.png 300w, ./../wp-content/uploads/2024/04/with_SSI-768x432.png 768w" sizes="auto, (max-width: 900px) 100vw, 900px"></div>
+<div class="wp-block-nelio-compare-images__divider wp-block-nelio-compare-images__divider--vertical"></div>
+<div class="wp-block-nelio-compare-images__handler wp-block-nelio-compare-images__handler--vertical"></div>
+</div></figure>
+
+
+
+<p>To sum up: In the screenshot above 600 samples were taken at a low resolution and screen-space interpolation was performed to evaluate which pixels to sample from full resolution. Rendering only Sponza on a NVIDIA GeForce RTX 2070 SUPER with 600 samples eats up a lot of performance, and the result is not at all that perfect to be honest. The low resolution artefacts are very visible and there is no variety in the sampling, because if more variety is introduced that would create noise.</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+
+<h4 class="wp-block-heading" id="noise">Noise</h4>
+
+
+
+<p>At this point I had finished the implementation of the paper. The result was fine, but I was not over the moon about it. I decided to ask for some feedback from my teacher, who explained that in modern games it’s a common technique to take a low number of samples at full resolution, which results in a lot of noise, and then use various techniques to denoise the image. So I decided to try that.</p>
+
+
+
+<p>First of all, we need to introduce some noise when we take a sample. I did this by adding a simple hash function that takes in a float3 and outputs a float2:</p>
+
+
+
+<div class="wp-block-kevinbatdorf-code-block-pro" data-code-block-pro-font-family="Code-Pro-JetBrains-Mono" style="font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)">
+<span style="display:block;padding:16px 0 0 16px;margin-bottom:-1px;width:100%;text-align:left;background-color:#1E1E1E"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewbox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg></span><span role="button" tabindex="0" data-code="float2 hash23(float3 p3)
+{
+    p3 = frac(p3 * float3(0.1031, 0.1030, 0.0973));
+    p3 += dot(p3, p3.yzx + 33.33);
+    return frac((p3.xx + p3.yz) * p3.zy);
+}" style="color:#D4D4D4;display:none" aria-label="Copy" class="code-block-pro-copy-button"><svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path class="with-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path><path class="without-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg></span><pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code><span class="line"><span style="color: #569CD6">float2</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">hash23</span><span style="color: #D4D4D4">(</span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> p3)</span></span>
+<span class="line"><span style="color: #D4D4D4">{</span></span>
+<span class="line"><span style="color: #D4D4D4">    p3 = </span><span style="color: #DCDCAA">frac</span><span style="color: #D4D4D4">(p3 * </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">0.1031</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">0.1030</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">0.0973</span><span style="color: #D4D4D4">));</span></span>
+<span class="line"><span style="color: #D4D4D4">    p3 += </span><span style="color: #DCDCAA">dot</span><span style="color: #D4D4D4">(p3, p3.yzx + </span><span style="color: #B5CEA8">33.33</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #C586C0">return</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">frac</span><span style="color: #D4D4D4">((p3.xx + p3.yz) * p3.zy);</span></span>
+<span class="line"><span style="color: #D4D4D4">}</span></span></code></pre>
+</div>
+
+
+
+<p>The noise can be the same for every sample for this pixel, so it should be outside the for-loop. Then we add it to the offset, and manipulate the x-variable to have a softer cutoff rather than linear. The offset is added to the texture coordinate when we sample the reflective shadow map.</p>
+
+
+
+<div class="wp-block-kevinbatdorf-code-block-pro" data-code-block-pro-font-family="Code-Pro-JetBrains-Mono" style="font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)">
+<span style="display:block;padding:16px 0 0 16px;margin-bottom:-1px;width:100%;text-align:left;background-color:#1E1E1E"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewbox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg></span><span role="button" tabindex="0" data-code="float3 output = { 0.0, 0.0, 0.0 };
+float2 noise = hash23(float3(aPixel.x, aPixel.y, currentTime * 1000.0));
+
+for (uint i = 0; i &lt; aSampleCount; i++)
+{
+    float2 offset = Hammersley(i, aSampleCount);
+
+    offset.xy += noise;
+    offset.xy = fmod(offset.xy, 1.0);
+            
+    // Soft radius rather than hard cutoff
+    offset.x = (offset.x * offset.x * offset.x * offset.x + 1.0) * offset.x;
+    
+    float r = offset.x * aRMax;
+    float theta = offset.y * TWO_PI;
+    float2 coord = aUv + float2(r * cos(theta), r * sin(theta));
+    float weight = offset.x * offset.x;
+
+    float3 xp = rsmWorldPositionTex.Sample(linearSampler, coord).xyz;
+    float3 flux = rsmFluxTex.Sample(linearSampler, coord).rgb;
+    float3 np = normalize(2.0 * rsmNormalTex.Sample(linearSampler, coord).xyz - 1.0);
+
+    float3 Ep = flux * ((max(0, dot(np, aX - xp)) * max(0, dot(aN, xp - aX)))
+									               / pow(length(aX - xp), 4));
+
+    Ep *= weight;
+    output += Ep;
+}
+
+return output / aSampleCount * aIntensity;" style="color:#D4D4D4;display:none" aria-label="Copy" class="code-block-pro-copy-button"><svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path class="with-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path><path class="without-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg></span><pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code><span class="line"><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> output = { </span><span style="color: #B5CEA8">0.0</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">0.0</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">0.0</span><span style="color: #D4D4D4"> };</span></span>
+<span class="line"><span style="color: #569CD6">float2</span><span style="color: #D4D4D4"> noise = </span><span style="color: #DCDCAA">hash23</span><span style="color: #D4D4D4">(</span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4">(aPixel.x, aPixel.y, currentTime * </span><span style="color: #B5CEA8">1000.0</span><span style="color: #D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C586C0">for</span><span style="color: #D4D4D4"> (</span><span style="color: #569CD6">uint</span><span style="color: #D4D4D4"> i = </span><span style="color: #B5CEA8">0</span><span style="color: #D4D4D4">; i &lt; aSampleCount; i++)</span></span>
+<span class="line"><span style="color: #D4D4D4">{</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float2</span><span style="color: #D4D4D4"> offset = </span><span style="color: #DCDCAA">Hammersley</span><span style="color: #D4D4D4">(i, aSampleCount);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">    offset.xy += noise;</span></span>
+<span class="line"><span style="color: #D4D4D4">    offset.xy = </span><span style="color: #DCDCAA">fmod</span><span style="color: #D4D4D4">(offset.xy, </span><span style="color: #B5CEA8">1.0</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"><span style="color: #D4D4D4">            </span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #6A9955">// Soft radius rather than hard cutoff</span></span>
+<span class="line"><span style="color: #D4D4D4">    offset.x = (offset.x * offset.x * offset.x * offset.x + </span><span style="color: #B5CEA8">1.0</span><span style="color: #D4D4D4">) * offset.x;</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float</span><span style="color: #D4D4D4"> r = offset.x * aRMax;</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float</span><span style="color: #D4D4D4"> theta = offset.y * TWO_PI;</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float2</span><span style="color: #D4D4D4"> coord = aUv + </span><span style="color: #569CD6">float2</span><span style="color: #D4D4D4">(r * </span><span style="color: #DCDCAA">cos</span><span style="color: #D4D4D4">(theta), r * </span><span style="color: #DCDCAA">sin</span><span style="color: #D4D4D4">(theta));</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float</span><span style="color: #D4D4D4"> weight = offset.x * offset.x;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> xp = rsmWorldPositionTex.</span><span style="color: #DCDCAA">Sample</span><span style="color: #D4D4D4">(linearSampler, coord).xyz;</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> flux = rsmFluxTex.</span><span style="color: #DCDCAA">Sample</span><span style="color: #D4D4D4">(linearSampler, coord).rgb;</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> np = </span><span style="color: #DCDCAA">normalize</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">2.0</span><span style="color: #D4D4D4"> * rsmNormalTex.</span><span style="color: #DCDCAA">Sample</span><span style="color: #D4D4D4">(linearSampler, coord).xyz - </span><span style="color: #B5CEA8">1.0</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> Ep = flux * ((</span><span style="color: #DCDCAA">max</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">0</span><span style="color: #D4D4D4">, </span><span style="color: #DCDCAA">dot</span><span style="color: #D4D4D4">(np, aX - xp)) * </span><span style="color: #DCDCAA">max</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">0</span><span style="color: #D4D4D4">, </span><span style="color: #DCDCAA">dot</span><span style="color: #D4D4D4">(aN, xp - aX)))</span></span>
+<span class="line"><span style="color: #D4D4D4">									               / </span><span style="color: #DCDCAA">pow</span><span style="color: #D4D4D4">(</span><span style="color: #DCDCAA">length</span><span style="color: #D4D4D4">(aX - xp), </span><span style="color: #B5CEA8">4</span><span style="color: #D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">    Ep *= weight;</span></span>
+<span class="line"><span style="color: #D4D4D4">    output += Ep;</span></span>
+<span class="line"><span style="color: #D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C586C0">return</span><span style="color: #D4D4D4"> output / aSampleCount * aIntensity;</span></span></code></pre>
+</div>
+
+
+
+<p>Using the current time as a parameter when generating the noise gives us different noise every frame, resulting in the crackling static of an old television tuned to a dead channel.</p>
+
+
+
+<p>With 1 sample per pixel, it looks like this:</p>
+
+
+
+<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2024/04/f79398e0-bf7c-4812-9eb2-a1a72a2479bd-encode-1712820894085.mp4"></video></figure>
+
+
+
+<p>And with 12 samples per pixel we get this:</p>
+
+
+
+<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2024/04/9ea51b0e-92f7-405c-88fd-255a65f4f1d8-encode-1712820950486.mp4"></video></figure>
+
+
+
+<p>In order to denoise the image, there are a couple of different things we can do:</p>
+
+
+
+<p><strong>Spatial filtering</strong>, which reuses similar neighbouring pixels to alter parts of the image. This won&#8217;t cause any temporal lag or ghosting but introduces bluriness and muddiness.</p>
+
+
+
+<p><strong>Temporal accumulation</strong>, which reuses data from the previous frame to smooth out the image in the current frame. It introduces temporal lag but doesn&#8217;t produce any blurriness.</p>
+
+
+
+<p><strong>Machine learning and deep learning reconstruction</strong>, which uses a neural network to reconstruct the image.</p>
+
+
+
+<p>I chose to implement a technique called temporal anti-aliasing which not only smoothens jagged edges but it also reduces noise, and is relatively simple to implement which fits within the scope of this project.</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+
+<h3 class="wp-block-heading" id="taa">Temporal Anti-Aliasing</h3>
+
+
+
+<p>What is temporal anti-aliasing? Well, as the temporal part of the name suggests it has to do with time. What it boils down to is that we combine information from the current frame with past frames, using jitter to make sure the frames differ a little.</p>
+
+
+
+<h4 class="wp-block-heading">Jitter</h4>
+
+
+
+<p>The first thing we do is apply a random offset to the translation of the projection matrix each frame, following a quasi-random sequence. Most implementations I found use a Halton sequence so this is what I went for. This produces the jitter we&#8217;re looking for.</p>
+
+
+
+<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2024/04/fcfc0a5c-2161-4885-b069-c599c552585d-encode-1712820894154.mp4"></video></figure>
+
+
+
+<h4 class="wp-block-heading">Resolve</h4>
+
+
+
+<p>The next step is the resolve pass. This means that we use an accumulation buffer for the previous frames, so that we can read from N while writing to N-1 one frame, and then read from N-1 while writing to N the next, and then the cycle repeats.</p>
+
+
+
+<p>Each frame we blend the current frame with the accumulated frame like so:</p>
+
+
+
+<div class="wp-block-kevinbatdorf-code-block-pro" data-code-block-pro-font-family="Code-Pro-JetBrains-Mono" style="font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)">
+<span style="display:block;padding:16px 0 0 16px;margin-bottom:-1px;width:100%;text-align:left;background-color:#1E1E1E"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewbox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg></span><span role="button" tabindex="0" data-code="float3 currentColour = currentTexture.Sample(linearSampler, aInput.texCoord).rgb;
+float3 previousColour = previousTexture.Sample(linearSampler, aInput.texCoord).rgb;
+    
+float3 output = currentColour * 0.1 + previousColour * 0.9;" style="color:#D4D4D4;display:none" aria-label="Copy" class="code-block-pro-copy-button"><svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path class="with-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path><path class="without-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg></span><pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code><span class="line"><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> currentColour = currentTexture.</span><span style="color: #DCDCAA">Sample</span><span style="color: #D4D4D4">(linearSampler, aInput.texCoord).rgb;</span></span>
+<span class="line"><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> previousColour = previousTexture.</span><span style="color: #DCDCAA">Sample</span><span style="color: #D4D4D4">(linearSampler, aInput.texCoord).rgb;</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span></span>
+<span class="line"><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> output = currentColour * </span><span style="color: #B5CEA8">0.1</span><span style="color: #D4D4D4"> + previousColour * </span><span style="color: #B5CEA8">0.9</span><span style="color: #D4D4D4">;</span></span></code></pre>
+</div>
+
+
+
+<p>This blends the frames well together, but as soon as we move the camera we get a lot of ghosting.</p>
+
+
+
+<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2024/04/4ba3f019-6709-4c60-ab4f-9c2da59dd54a-encode-1712820777334.mp4"></video></figure>
+
+
+
+<p>The reason we get ghosting is because the previous frame is sampled at the same position as the current frame, but the camera has moved a little since then, so we need to account for that difference somehow.</p>
+
+
+
+<h4 class="wp-block-heading">Reprojection</h4>
+
+
+
+<p>The next step is called reprojection, and that means we take the current world position at a pixel and reproject it using the view-projection matrix of the previous frame.</p>
+
+
+
+<div class="wp-block-kevinbatdorf-code-block-pro" data-code-block-pro-font-family="Code-Pro-JetBrains-Mono" style="font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)">
+<span style="display:block;padding:16px 0 0 16px;margin-bottom:-1px;width:100%;text-align:left;background-color:#1E1E1E"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewbox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg></span><span role="button" tabindex="0" data-code="float2 CameraReproject(float3 aPosition)
+{
+    float4 screenPosition = mul(historyViewProjection, float4(aPosition, 1.0));
+    float2 screenUV = screenPosition.xy / screenPosition.w;
+    float2 reprojectedUV = screenUV * float2(0.5, -0.5) + 0.5;
+    return reprojectedUV;
+}
+	
+float4 main(const PixelInput aInput) : SV_TARGET
+{
+    float3 worldPosition = worldPositionTexture.Sample(linearSampler, aInput.texCoord).rgb;
+  
+    float2 reprojectedUV = CameraReproject(worldPosition);
+  
+    float3 currentColour = currentTexture.Sample(linearSampler, aInput.texCoord).rgb;
+    float3 previousColour = previousTexture.Sample(linearSampler, reprojectedUV).rgb;
+
+    float3 output = currentColour * 0.1 + previousColour * 0.9;
+  
+    return float4(output, 1.0);
+}" style="color:#D4D4D4;display:none" aria-label="Copy" class="code-block-pro-copy-button"><svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path class="with-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path><path class="without-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg></span><pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code><span class="line"><span style="color: #569CD6">float2</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">CameraReproject</span><span style="color: #D4D4D4">(</span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> aPosition)</span></span>
+<span class="line"><span style="color: #D4D4D4">{</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float4</span><span style="color: #D4D4D4"> screenPosition = </span><span style="color: #DCDCAA">mul</span><span style="color: #D4D4D4">(historyViewProjection, </span><span style="color: #569CD6">float4</span><span style="color: #D4D4D4">(aPosition, </span><span style="color: #B5CEA8">1.0</span><span style="color: #D4D4D4">));</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float2</span><span style="color: #D4D4D4"> screenUV = screenPosition.xy / screenPosition.w;</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float2</span><span style="color: #D4D4D4"> reprojectedUV = screenUV * </span><span style="color: #569CD6">float2</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">0.5</span><span style="color: #D4D4D4">, -</span><span style="color: #B5CEA8">0.5</span><span style="color: #D4D4D4">) + </span><span style="color: #B5CEA8">0.5</span><span style="color: #D4D4D4">;</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #C586C0">return</span><span style="color: #D4D4D4"> reprojectedUV;</span></span>
+<span class="line"><span style="color: #D4D4D4">}</span></span>
+<span class="line"><span style="color: #D4D4D4">	</span></span>
+<span class="line"><span style="color: #569CD6">float4</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">main</span><span style="color: #D4D4D4">(</span><span style="color: #569CD6">const</span><span style="color: #D4D4D4"> PixelInput aInput) : </span><span style="color: #9CDCFE">SV_TARGET</span></span>
+<span class="line"><span style="color: #D4D4D4">{</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> worldPosition = worldPositionTexture.</span><span style="color: #DCDCAA">Sample</span><span style="color: #D4D4D4">(linearSampler, aInput.texCoord).rgb;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float2</span><span style="color: #D4D4D4"> reprojectedUV = </span><span style="color: #DCDCAA">CameraReproject</span><span style="color: #D4D4D4">(worldPosition);</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> currentColour = currentTexture.</span><span style="color: #DCDCAA">Sample</span><span style="color: #D4D4D4">(linearSampler, aInput.texCoord).rgb;</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> previousColour = previousTexture.</span><span style="color: #DCDCAA">Sample</span><span style="color: #D4D4D4">(linearSampler, reprojectedUV).rgb;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> output = currentColour * </span><span style="color: #B5CEA8">0.1</span><span style="color: #D4D4D4"> + previousColour * </span><span style="color: #B5CEA8">0.9</span><span style="color: #D4D4D4">;</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #C586C0">return</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">float4</span><span style="color: #D4D4D4">(output, </span><span style="color: #B5CEA8">1.0</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"><span style="color: #D4D4D4">}</span></span></code></pre>
+</div>
+
+
+
+<p>That fixes most of the ghosting but not all. Parts of the image that weren&#8217;t previously visible still cause ghosting.</p>
+
+
+
+<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2024/04/632234d5-08ab-468e-8d3b-615a7cb8c1ed-encode-1712820833358.mp4"></video></figure>
+
+
+
+<h4 class="wp-block-heading">Colour clamping</h4>
+
+
+
+<p>The solution to this is colour clamping. This means that when we sample a pixel, the colours in its neighbourhood can make valid contributions to the accumulation process. If we find that the values differ greatly we can adjust them to fit in the neighbourhood.</p>
+
+
+
+<div class="wp-block-kevinbatdorf-code-block-pro" data-code-block-pro-font-family="Code-Pro-JetBrains-Mono" style="font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)">
+<span style="display:block;padding:16px 0 0 16px;margin-bottom:-1px;width:100%;text-align:left;background-color:#1E1E1E"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewbox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg></span><span role="button" tabindex="0" data-code="float3 currentColour = currentTexture.Sample(linearSampler, aInput.texCoord).rgb;
+float3 previousColour = previousTexture.Sample(linearSampler, reprojectedUV).rgb;
+
+float3 minColour = 9999.0, maxColour = -9999.0;
+ 
+for (int x = -1; x &lt;= 1; ++x)
+{
+    for (int y = -1; y &lt;= 1; ++y)
+    {
+        float3 colour = currentTexture.Sample(linearSampler, aInput.texCoord + float2(x, y) / resolution);
+        minColour = min(minColour, colour);
+        maxColour = max(maxColour, colour);
+    }
+}
+ 
+float3 previousColourClamped = clamp(previousColour, minColour, maxColour);
+
+float3 output = currentColour * 0.1 + previousColourClamped * 0.9;" style="color:#D4D4D4;display:none" aria-label="Copy" class="code-block-pro-copy-button"><svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path class="with-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path><path class="without-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg></span><pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code><span class="line"><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> currentColour = currentTexture.</span><span style="color: #DCDCAA">Sample</span><span style="color: #D4D4D4">(linearSampler, aInput.texCoord).rgb;</span></span>
+<span class="line"><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> previousColour = previousTexture.</span><span style="color: #DCDCAA">Sample</span><span style="color: #D4D4D4">(linearSampler, reprojectedUV).rgb;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> minColour = </span><span style="color: #B5CEA8">9999.0</span><span style="color: #D4D4D4">, maxColour = -</span><span style="color: #B5CEA8">9999.0</span><span style="color: #D4D4D4">;</span></span>
+<span class="line"><span style="color: #D4D4D4"> </span></span>
+<span class="line"><span style="color: #C586C0">for</span><span style="color: #D4D4D4"> (</span><span style="color: #569CD6">int</span><span style="color: #D4D4D4"> x = -</span><span style="color: #B5CEA8">1</span><span style="color: #D4D4D4">; x &lt;= </span><span style="color: #B5CEA8">1</span><span style="color: #D4D4D4">; ++x)</span></span>
+<span class="line"><span style="color: #D4D4D4">{</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #C586C0">for</span><span style="color: #D4D4D4"> (</span><span style="color: #569CD6">int</span><span style="color: #D4D4D4"> y = -</span><span style="color: #B5CEA8">1</span><span style="color: #D4D4D4">; y &lt;= </span><span style="color: #B5CEA8">1</span><span style="color: #D4D4D4">; ++y)</span></span>
+<span class="line"><span style="color: #D4D4D4">    {</span></span>
+<span class="line"><span style="color: #D4D4D4">        </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> colour = currentTexture.</span><span style="color: #DCDCAA">Sample</span><span style="color: #D4D4D4">(linearSampler, aInput.texCoord + </span><span style="color: #569CD6">float2</span><span style="color: #D4D4D4">(x, y) / resolution);</span></span>
+<span class="line"><span style="color: #D4D4D4">        minColour = </span><span style="color: #DCDCAA">min</span><span style="color: #D4D4D4">(minColour, colour);</span></span>
+<span class="line"><span style="color: #D4D4D4">        maxColour = </span><span style="color: #DCDCAA">max</span><span style="color: #D4D4D4">(maxColour, colour);</span></span>
+<span class="line"><span style="color: #D4D4D4">    }</span></span>
+<span class="line"><span style="color: #D4D4D4">}</span></span>
+<span class="line"><span style="color: #D4D4D4"> </span></span>
+<span class="line"><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> previousColourClamped = </span><span style="color: #DCDCAA">clamp</span><span style="color: #D4D4D4">(previousColour, minColour, maxColour);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> output = currentColour * </span><span style="color: #B5CEA8">0.1</span><span style="color: #D4D4D4"> + previousColourClamped * </span><span style="color: #B5CEA8">0.9</span><span style="color: #D4D4D4">;</span></span></code></pre>
+</div>
+
+
+
+<p>This does not remove the ghosting entirely, but it significantly reduces it.</p>
+
+
+
+<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2024/04/30691d08-69d6-4296-8bb9-e6eae2e8abb7-encode-1712820894176.mp4"></video></figure>
+
+
+
+<h4 class="wp-block-heading">The result</h4>
+
+
+
+<p>There are ways to further improve temporal anti-aliasing but these techniques are beyond the scope of this project. If I had more time I would definitely delve deeper into the world of temporal anti-aliasing to reduce ghosting and improve the visual fidelity of the end result. I would also spend some more time researching and implementing a denoising technique. This is something I&#8217;m excited to do in future projects!</p>
+
+
+
+<p>To demonstrate the amount of denoising temporal anti-aliasing manages to do I chose to render the indirect lighting with 12 samples with temporal anti-aliasing on and off.</p>
+
+
+
+<figure class="wp-block-nelio-compare-images"><div class="wp-block-nelio-compare-images__comparison-wrapper wp-block-nelio-compare-images__comparison-wrapper--horizontally" data-position="50" data-direction="horizontal">
+<div class="wp-block-nelio-compare-images__before-image wp-block-nelio-compare-images__before-image--horizontal"><img loading="lazy" decoding="async" width="1920" height="1080" class="wp-image-259" src="./../wp-content/uploads/2024/04/Game_Release_Xjyu3Psoy8.jpg" alt="" srcset="./../wp-content/uploads/2024/04/Game_Release_Xjyu3Psoy8.jpg 1920w, ./../wp-content/uploads/2024/04/Game_Release_Xjyu3Psoy8-300x169.jpg 300w, ./../wp-content/uploads/2024/04/Game_Release_Xjyu3Psoy8-1024x576.jpg 1024w, ./../wp-content/uploads/2024/04/Game_Release_Xjyu3Psoy8-768x432.jpg 768w, ./../wp-content/uploads/2024/04/Game_Release_Xjyu3Psoy8-1536x864.jpg 1536w" sizes="auto, (max-width: 1920px) 100vw, 1920px"></div>
+<div class="wp-block-nelio-compare-images__after-image wp-block-nelio-compare-images__after-image--horizontal" style="width:50%"><img loading="lazy" decoding="async" width="1920" height="1080" class="wp-image-260" src="./../wp-content/uploads/2024/04/Game_Release_yUThJPehoj.jpg" alt="" srcset="./../wp-content/uploads/2024/04/Game_Release_yUThJPehoj.jpg 1920w, ./../wp-content/uploads/2024/04/Game_Release_yUThJPehoj-300x169.jpg 300w, ./../wp-content/uploads/2024/04/Game_Release_yUThJPehoj-1024x576.jpg 1024w, ./../wp-content/uploads/2024/04/Game_Release_yUThJPehoj-768x432.jpg 768w, ./../wp-content/uploads/2024/04/Game_Release_yUThJPehoj-1536x864.jpg 1536w" sizes="auto, (max-width: 1920px) 100vw, 1920px"></div>
+<div class="wp-block-nelio-compare-images__divider wp-block-nelio-compare-images__divider--vertical"></div>
+<div class="wp-block-nelio-compare-images__handler wp-block-nelio-compare-images__handler--vertical"></div>
+</div>
+<figcaption class="wp-block-nelio-compare-images__caption">Comparison between before and after temporal anti-aliasing.</figcaption></figure>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+
+<h3 class="wp-block-heading" id="volumetric">Volumetric Light</h3>
+
+
+
+<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2024/04/b4acd65f-52d5-40d1-bba4-62bd567e1030-encode-1712820833198.mp4"></video></figure>
+
+
+
+<h4 class="wp-block-heading">Introduction</h4>
+
+
+
+<p>I wanted to add some volume to the light to really make it stand out together with the indirect light, so I read a little bit about volumetric light and the concept is quite simple. Since I already do a fullscreen lighting pass with information from the G-buffer, all I have to do is add the volumetric light contribution when calculating my light.</p>
+
+
+
+<h4 class="wp-block-heading">Implementation</h4>
+
+
+
+<p>Volumetric light is evaluated by ray marching between the camera position and the world position of the current pixel. For each step we use the information from the shadow map to check if the position can be seen by the light or not, and accumulate the light scattered in the camera direction using the Henyey-Greenstein phase function.</p>
+
+
+
+<p>A dither pattern softens the edges a bit. With 15 steps it looks good and barely takes any performance. It could be made to look even better by blurring but I didn&#8217;t feel that it was necessary.</p>
+
+
+
+<div class="wp-block-kevinbatdorf-code-block-pro" data-code-block-pro-font-family="Code-Pro-JetBrains-Mono" style="font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)">
+<span style="display:block;padding:16px 0 0 16px;margin-bottom:-1px;width:100%;text-align:left;background-color:#1E1E1E"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewbox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg></span><span role="button" tabindex="0" data-code="float4x4 DITHER_PATTERN = float4x4
+    (float4(0.0, 0.5, 0.125, 0.625),
+     float4(0.75, 0.22, 0.875, 0.375),
+     float4(0.1875, 0.6875, 0.0625, 0.5625),
+     float4(0.9375, 0.4375, 0.8125, 0.3125));
+
+float CalculateScattering(float aCosTheta, float aScattering)
+{
+    return (1.0 - aScattering * aScattering) /
+    (4.0 * PI * pow(1.0 + aScattering * aScattering - 2.0 * aScattering * aCosTheta, 1.5));
+}
+
+float3 Volumetric(float3 aWorldPosition, float3 aCameraPosition, uint aSteps, float2 aUv, float2 aResolution, matrix aTransform, Texture2D aShadowMap, SamplerState aSampler, float3 aLightDirection, float3 aColour, float aScattering)
+{
+    float3 volumetric = float3(0.0, 0.0, 0.0);
+    float3 direction = aWorldPosition - aCameraPosition;
+
+    float stepSize = length(direction) / (float)aSteps;
+    direction = normalize(direction);
+    float3 step = direction * stepSize;
+ 
+    float3 position = aCameraPosition;
+    position += step * DITHER_PATTERN[int(aUv.x * aResolution.x) % 4][int(aUv.y * aResolution.y) % 4];
+
+    for (int i = 0; i &lt; aSteps; i++)
+    {
+        float4 lightSpacePositionTemp = mul(aTransform, float4(position, 1.0));
+        float3 lightSpacePosition = lightSpacePositionTemp.xyz / lightSpacePositionTemp.w;
+
+        float2 sampleUV = 0.5 + float2(0.5, -0.5) * lightSpacePosition.xy;
+
+        float shadowMapValue = aShadowMap.Sample(aSampler, sampleUV).r;
+
+        if (shadowMapValue &gt; lightSpacePosition.z)
+        {
+            volumetric += CalculateScattering(dot(V, -aLightDirection), aScattering) * aColour;
+        }
+        position += step;
+    }
+    volumetric /= (float) aSteps;
+
+    return volumetric;
+}" style="color:#D4D4D4;display:none" aria-label="Copy" class="code-block-pro-copy-button"><svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path class="with-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path><path class="without-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg></span><pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code><span class="line"><span style="color: #569CD6">float4x4</span><span style="color: #D4D4D4"> DITHER_PATTERN = </span><span style="color: #569CD6">float4x4</span></span>
+<span class="line"><span style="color: #D4D4D4">    (</span><span style="color: #569CD6">float4</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">0.0</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">0.5</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">0.125</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">0.625</span><span style="color: #D4D4D4">),</span></span>
+<span class="line"><span style="color: #D4D4D4">     </span><span style="color: #569CD6">float4</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">0.75</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">0.22</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">0.875</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">0.375</span><span style="color: #D4D4D4">),</span></span>
+<span class="line"><span style="color: #D4D4D4">     </span><span style="color: #569CD6">float4</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">0.1875</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">0.6875</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">0.0625</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">0.5625</span><span style="color: #D4D4D4">),</span></span>
+<span class="line"><span style="color: #D4D4D4">     </span><span style="color: #569CD6">float4</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">0.9375</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">0.4375</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">0.8125</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">0.3125</span><span style="color: #D4D4D4">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #569CD6">float</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">CalculateScattering</span><span style="color: #D4D4D4">(</span><span style="color: #569CD6">float</span><span style="color: #D4D4D4"> aCosTheta, </span><span style="color: #569CD6">float</span><span style="color: #D4D4D4"> aScattering)</span></span>
+<span class="line"><span style="color: #D4D4D4">{</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #C586C0">return</span><span style="color: #D4D4D4"> (</span><span style="color: #B5CEA8">1.0</span><span style="color: #D4D4D4"> - aScattering * aScattering) /</span></span>
+<span class="line"><span style="color: #D4D4D4">    (</span><span style="color: #B5CEA8">4.0</span><span style="color: #D4D4D4"> * PI * </span><span style="color: #DCDCAA">pow</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">1.0</span><span style="color: #D4D4D4"> + aScattering * aScattering - </span><span style="color: #B5CEA8">2.0</span><span style="color: #D4D4D4"> * aScattering * aCosTheta, </span><span style="color: #B5CEA8">1.5</span><span style="color: #D4D4D4">));</span></span>
+<span class="line"><span style="color: #D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">Volumetric</span><span style="color: #D4D4D4">(</span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> aWorldPosition, </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> aCameraPosition, </span><span style="color: #569CD6">uint</span><span style="color: #D4D4D4"> aSteps, </span><span style="color: #569CD6">float2</span><span style="color: #D4D4D4"> aUv, </span><span style="color: #569CD6">float2</span><span style="color: #D4D4D4"> aResolution, </span><span style="color: #569CD6">matrix</span><span style="color: #D4D4D4"> aTransform, </span><span style="color: #4EC9B0">Texture2D</span><span style="color: #D4D4D4"> aShadowMap, </span><span style="color: #4EC9B0">SamplerState</span><span style="color: #D4D4D4"> aSampler, </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> aLightDirection, </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> aColour, </span><span style="color: #569CD6">float</span><span style="color: #D4D4D4"> aScattering)</span></span>
+<span class="line"><span style="color: #D4D4D4">{</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> volumetric = </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">0.0</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">0.0</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">0.0</span><span style="color: #D4D4D4">);</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> direction = aWorldPosition - aCameraPosition;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float</span><span style="color: #D4D4D4"> stepSize = </span><span style="color: #DCDCAA">length</span><span style="color: #D4D4D4">(direction) / (</span><span style="color: #569CD6">float</span><span style="color: #D4D4D4">)aSteps;</span></span>
+<span class="line"><span style="color: #D4D4D4">    direction = </span><span style="color: #DCDCAA">normalize</span><span style="color: #D4D4D4">(direction);</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> step = direction * stepSize;</span></span>
+<span class="line"><span style="color: #D4D4D4"> </span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> position = aCameraPosition;</span></span>
+<span class="line"><span style="color: #D4D4D4">    position += step * DITHER_PATTERN[</span><span style="color: #569CD6">int</span><span style="color: #D4D4D4">(aUv.x * aResolution.x) % </span><span style="color: #B5CEA8">4</span><span style="color: #D4D4D4">][</span><span style="color: #569CD6">int</span><span style="color: #D4D4D4">(aUv.y * aResolution.y) % </span><span style="color: #B5CEA8">4</span><span style="color: #D4D4D4">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #C586C0">for</span><span style="color: #D4D4D4"> (</span><span style="color: #569CD6">int</span><span style="color: #D4D4D4"> i = </span><span style="color: #B5CEA8">0</span><span style="color: #D4D4D4">; i &lt; aSteps; i++)</span></span>
+<span class="line"><span style="color: #D4D4D4">    {</span></span>
+<span class="line"><span style="color: #D4D4D4">        </span><span style="color: #569CD6">float4</span><span style="color: #D4D4D4"> lightSpacePositionTemp = </span><span style="color: #DCDCAA">mul</span><span style="color: #D4D4D4">(aTransform, </span><span style="color: #569CD6">float4</span><span style="color: #D4D4D4">(position, </span><span style="color: #B5CEA8">1.0</span><span style="color: #D4D4D4">));</span></span>
+<span class="line"><span style="color: #D4D4D4">        </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> lightSpacePosition = lightSpacePositionTemp.xyz / lightSpacePositionTemp.w;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">        </span><span style="color: #569CD6">float2</span><span style="color: #D4D4D4"> sampleUV = </span><span style="color: #B5CEA8">0.5</span><span style="color: #D4D4D4"> + </span><span style="color: #569CD6">float2</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">0.5</span><span style="color: #D4D4D4">, -</span><span style="color: #B5CEA8">0.5</span><span style="color: #D4D4D4">) * lightSpacePosition.xy;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">        </span><span style="color: #569CD6">float</span><span style="color: #D4D4D4"> shadowMapValue = aShadowMap.</span><span style="color: #DCDCAA">Sample</span><span style="color: #D4D4D4">(aSampler, sampleUV).r;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">        </span><span style="color: #C586C0">if</span><span style="color: #D4D4D4"> (shadowMapValue &gt; lightSpacePosition.z)</span></span>
+<span class="line"><span style="color: #D4D4D4">        {</span></span>
+<span class="line"><span style="color: #D4D4D4">            volumetric += </span><span style="color: #DCDCAA">CalculateScattering</span><span style="color: #D4D4D4">(</span><span style="color: #DCDCAA">dot</span><span style="color: #D4D4D4">(V, -aLightDirection), aScattering) * aColour;</span></span>
+<span class="line"><span style="color: #D4D4D4">        }</span></span>
+<span class="line"><span style="color: #D4D4D4">        position += step;</span></span>
+<span class="line"><span style="color: #D4D4D4">    }</span></span>
+<span class="line"><span style="color: #D4D4D4">    volumetric /= (</span><span style="color: #569CD6">float</span><span style="color: #D4D4D4">) aSteps;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #C586C0">return</span><span style="color: #D4D4D4"> volumetric;</span></span>
+<span class="line"><span style="color: #D4D4D4">}</span></span></code></pre>
+</div>
+
+
+
+<h4 class="wp-block-heading">The result</h4>
+
+
+
+<p>At times the dithering pattern can be a bit too visible, in which case a blurring pass would do the trick. But I found that for the most part the volumetric light looked amazing anyway. If I had more time I would definitely polish it further.</p>
+
+
+
+<div id="wp-block-themeisle-blocks-slider-f899729a" class="wp-block-themeisle-blocks-slider glide" data-per-view="1" data-gap="0" data-peek="0" data-autoplay="3000" data-height="400px" data-hide-arrows="false"><div class="glide__track" data-glide-el="track">
+<div class="glide__slides">
+<div class="wp-block-themeisle-blocks-slider-item-wrapper glide__slide" tabindex="0"><figure><img decoding="async" class="wp-block-themeisle-blocks-slider-item" src="./../wp-content/uploads/2024/04/Game_Release_8q7s7Qni8K.jpg" alt="" title="" data-id="286"></figure></div>
+<div class="wp-block-themeisle-blocks-slider-item-wrapper glide__slide" tabindex="0"><figure><img decoding="async" class="wp-block-themeisle-blocks-slider-item" src="./../wp-content/uploads/2024/04/Game_Release_4Ooe69UK5C.jpg" alt="" title="" data-id="287"></figure></div>
+<div class="wp-block-themeisle-blocks-slider-item-wrapper glide__slide" tabindex="0"><figure><img decoding="async" class="wp-block-themeisle-blocks-slider-item" src="./../wp-content/uploads/2024/04/Game_Release_KlmT9qKjpr.jpg" alt="" title="" data-id="289"></figure></div>
+<div class="wp-block-themeisle-blocks-slider-item-wrapper glide__slide" tabindex="0"><figure><img decoding="async" class="wp-block-themeisle-blocks-slider-item" src="./../wp-content/uploads/2024/04/Game_Release_d8jsSLcW2h.jpg" alt="" title="" data-id="288"></figure></div>
+<div class="wp-block-themeisle-blocks-slider-item-wrapper glide__slide" tabindex="0"><figure><img decoding="async" class="wp-block-themeisle-blocks-slider-item" src="./../wp-content/uploads/2024/04/Game_Release_zhSO0iUrzj.jpg" alt="" title="" data-id="290"></figure></div>
+</div>
+<div class="glide__bullets" data-glide-el="controls[nav]">
+<button class="glide__bullet" data-glide-dir="=0"></button><button class="glide__bullet" data-glide-dir="=1"></button><button class="glide__bullet" data-glide-dir="=2"></button><button class="glide__bullet" data-glide-dir="=3"></button><button class="glide__bullet" data-glide-dir="=4"></button>
+</div>
+</div></div>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+
+<h2 class="wp-block-heading">Final result</h2>
+
+
+
+<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2024/04/98d61ed3-5a0e-4f16-9fde-e4033c223fb0-encode-1712820894177.mp4"></video></figure>
+
+
+
+<figure class="wp-block-nelio-compare-images"><div class="wp-block-nelio-compare-images__comparison-wrapper wp-block-nelio-compare-images__comparison-wrapper--horizontally" data-position="50" data-direction="horizontal">
+<div class="wp-block-nelio-compare-images__before-image wp-block-nelio-compare-images__before-image--horizontal"><img loading="lazy" decoding="async" width="1920" height="1080" class="wp-image-295" src="./../wp-content/uploads/2024/04/Game_Release_YC0Yzqq8F8.jpg" alt="" srcset="./../wp-content/uploads/2024/04/Game_Release_YC0Yzqq8F8.jpg 1920w, ./../wp-content/uploads/2024/04/Game_Release_YC0Yzqq8F8-300x169.jpg 300w, ./../wp-content/uploads/2024/04/Game_Release_YC0Yzqq8F8-1024x576.jpg 1024w, ./../wp-content/uploads/2024/04/Game_Release_YC0Yzqq8F8-768x432.jpg 768w, ./../wp-content/uploads/2024/04/Game_Release_YC0Yzqq8F8-1536x864.jpg 1536w" sizes="auto, (max-width: 1920px) 100vw, 1920px"></div>
+<div class="wp-block-nelio-compare-images__after-image wp-block-nelio-compare-images__after-image--horizontal" style="width:50%"><img loading="lazy" decoding="async" width="1920" height="1080" class="wp-image-296" src="./../wp-content/uploads/2024/04/Game_Release_nCwCvhk0Tq.jpg" alt="" srcset="./../wp-content/uploads/2024/04/Game_Release_nCwCvhk0Tq.jpg 1920w, ./../wp-content/uploads/2024/04/Game_Release_nCwCvhk0Tq-300x169.jpg 300w, ./../wp-content/uploads/2024/04/Game_Release_nCwCvhk0Tq-1024x576.jpg 1024w, ./../wp-content/uploads/2024/04/Game_Release_nCwCvhk0Tq-768x432.jpg 768w, ./../wp-content/uploads/2024/04/Game_Release_nCwCvhk0Tq-1536x864.jpg 1536w" sizes="auto, (max-width: 1920px) 100vw, 1920px"></div>
+<div class="wp-block-nelio-compare-images__divider wp-block-nelio-compare-images__divider--vertical"></div>
+<div class="wp-block-nelio-compare-images__handler wp-block-nelio-compare-images__handler--vertical"></div>
+</div>
+<figcaption class="wp-block-nelio-compare-images__caption">Without and with indirect light.</figcaption></figure>
+
+
+
+<figure class="wp-block-nelio-compare-images"><div class="wp-block-nelio-compare-images__comparison-wrapper wp-block-nelio-compare-images__comparison-wrapper--horizontally" data-position="50" data-direction="horizontal">
+<div class="wp-block-nelio-compare-images__before-image wp-block-nelio-compare-images__before-image--horizontal"><img loading="lazy" decoding="async" width="1920" height="1080" class="wp-image-300" src="./../wp-content/uploads/2024/04/Game_Release_eEJmm5r3Nb.jpg" alt="" srcset="./../wp-content/uploads/2024/04/Game_Release_eEJmm5r3Nb.jpg 1920w, ./../wp-content/uploads/2024/04/Game_Release_eEJmm5r3Nb-300x169.jpg 300w, ./../wp-content/uploads/2024/04/Game_Release_eEJmm5r3Nb-1024x576.jpg 1024w, ./../wp-content/uploads/2024/04/Game_Release_eEJmm5r3Nb-768x432.jpg 768w, ./../wp-content/uploads/2024/04/Game_Release_eEJmm5r3Nb-1536x864.jpg 1536w" sizes="auto, (max-width: 1920px) 100vw, 1920px"></div>
+<div class="wp-block-nelio-compare-images__after-image wp-block-nelio-compare-images__after-image--horizontal" style="width:50%"><img loading="lazy" decoding="async" width="1920" height="1080" class="wp-image-297" src="./../wp-content/uploads/2024/04/Game_Release_WYHZAjWnp5.jpg" alt="" srcset="./../wp-content/uploads/2024/04/Game_Release_WYHZAjWnp5.jpg 1920w, ./../wp-content/uploads/2024/04/Game_Release_WYHZAjWnp5-300x169.jpg 300w, ./../wp-content/uploads/2024/04/Game_Release_WYHZAjWnp5-1024x576.jpg 1024w, ./../wp-content/uploads/2024/04/Game_Release_WYHZAjWnp5-768x432.jpg 768w, ./../wp-content/uploads/2024/04/Game_Release_WYHZAjWnp5-1536x864.jpg 1536w" sizes="auto, (max-width: 1920px) 100vw, 1920px"></div>
+<div class="wp-block-nelio-compare-images__divider wp-block-nelio-compare-images__divider--vertical"></div>
+<div class="wp-block-nelio-compare-images__handler wp-block-nelio-compare-images__handler--vertical"></div>
+</div>
+<figcaption class="wp-block-nelio-compare-images__caption">Without and with indirect light.</figcaption></figure>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+
+<h2 class="wp-block-heading">Post Mortem </h2>
+
+
+
+<p>Before I started this project I looked at a myriad of global illumination techniques and my eye kept being drawn to the most advanced ones. I&#8217;m glad I finally decided to base my project around reflective shadow maps. The technique is relatively simple to implement and is a great introduction to indirect lighting. I found that there were some challenges to overcome, like figuring out the implementation pipeline and understanding the math, but I would recommend anyone who&#8217;s curious about indirect lighting to try their hands at reflective shadow maps.</p>
+
+
+
+<h4 class="wp-block-heading">Strengths</h4>
+
+
+
+<ul class="wp-block-list">
+<li>Dynamic lighting</li>
+
+
+
+<li>Low sample count results in high performance</li>
+
+
+
+<li>Modern denoising techniques can make it look great</li>
+
+
+
+<li>Relatively simple to understand and implement</li>
+</ul>
+
+
+
+<h4 class="wp-block-heading">Weaknesses</h4>
+
+
+
+<ul class="wp-block-list">
+<li>Only one bounce</li>
+
+
+
+<li>Cache-inefficient sampling</li>
+
+
+
+<li>Each light source requires its own reflective shadow map</li>
+</ul>
+
+
+
+<h4 class="wp-block-heading">Future work</h4>
+
+
+
+<p>It has been a great experience and proved to be a perfect first step into the world of indirect lighting. My goal now is to implement the technique in our next and final game project with better denoising to keep the high performance with high fidelity. I also look forward to exploring more modern techniques on my own time, such as ray-tracing and screen-space global illumination.</p>
+
+
+
+<p>There are also some improvements I could make to my current code. For example, I don&#8217;t need a world position buffer in the G-buffer since I can calculate it from the depth buffer.</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
+
+
+
+<h2 class="wp-block-heading">Next post</h2>
+
+
+
+<div class="wp-block-cover">
+<span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img loading="lazy" decoding="async" width="1292" height="860" class="wp-block-cover__image-background wp-image-338" alt="" src="./../wp-content/uploads/2024/04/vlc_WZpxlm1syP.png" data-object-fit="cover" srcset="./../wp-content/uploads/2024/04/vlc_WZpxlm1syP.png 1292w, ./../wp-content/uploads/2024/04/vlc_WZpxlm1syP-300x200.png 300w, ./../wp-content/uploads/2024/04/vlc_WZpxlm1syP-1024x682.png 1024w, ./../wp-content/uploads/2024/04/vlc_WZpxlm1syP-768x511.png 768w" sizes="auto, (max-width: 1292px) 100vw, 1292px"><div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow">
+<h1 class="wp-block-heading has-text-align-center has-luminous-vivid-amber-color has-text-color has-link-color has-huge-font-size wp-elements-438290483d999b262cd4fcab1773fb8d"><a href="./../flashlight/index.html" data-type="link" data-id=".//flashlight/">Flashlight</a></h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<footer class="wp-block-template-part">
+<div class="wp-block-group has-raft-fg-color has-raft-bg-alt-background-color has-text-color has-background is-layout-constrained wp-container-core-group-is-layout-12 wp-block-group-is-layout-constrained" style="padding-top:24px;padding-right:24px;padding-bottom:24px;padding-left:24px">
+<div class="wp-block-group alignwide is-content-justification-space-between is-layout-flex wp-container-core-group-is-layout-11 wp-block-group-is-layout-flex">
+<div class="wp-block-group is-layout-flex wp-block-group-is-layout-flex">
+<p class="has-small-font-size">Copyright 2024 &#8211; Anton Eriksson</p>
+</div>
+
+
+
+<div class="wp-block-group is-layout-flex wp-block-group-is-layout-flex"><nav class="has-small-font-size items-justified-right no-wrap wp-block-navigation is-content-justification-right is-nowrap is-layout-flex wp-container-core-navigation-is-layout-2 wp-block-navigation-is-layout-flex" aria-label="Sidhuvud-navigering 2"><ul class="wp-block-navigation__container has-small-font-size items-justified-right no-wrap wp-block-navigation has-small-font-size">
+<li class="has-small-font-size wp-block-navigation-item wp-block-navigation-link has-montserrat-font-family"><a class="wp-block-navigation-item__content" href="./../index.html"><span class="wp-block-navigation-item__label">Home</span></a></li>
+<li class="has-small-font-size wp-block-navigation-item wp-block-navigation-link has-montserrat-font-family"><a class="wp-block-navigation-item__content" href="./../group-projects/index.html"><span class="wp-block-navigation-item__label">Group Projects</span></a></li>
+<li class="has-small-font-size wp-block-navigation-item wp-block-navigation-link has-montserrat-font-family"><a class="wp-block-navigation-item__content" href="./../about/index.html"><span class="wp-block-navigation-item__label">Contact</span></a></li>
+<li class="has-small-font-size wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="./../wp-content/uploads/2024/04/Anton_Eriksson_CV.pdf" target="_blank"><span class="wp-block-navigation-item__label">Resumé</span></a></li>
+</ul></nav></div>
+</div>
+</div>
+</footer>
+</div>
+
+<style type="text/css" media="all">#wp-block-themeisle-blocks-advanced-columns-2c60bc77{padding-top:96px;padding-bottom:96px;padding-left:24px;padding-right:24px;margin-top:20px;margin-bottom:0;--columns-width:960px;justify-content:center;min-height:auto;--background:url(./../wp-content/uploads/2024/04/vlc_WZpxlm1syP.png) no-repeat scroll 49% 51%/cover}#wp-block-themeisle-blocks-advanced-columns-2c60bc77>.wp-block-themeisle-blocks-advanced-columns-overlay{background:#000;opacity:.3;mix-blend-mode:normal}@media (max-width:960px){#wp-block-themeisle-blocks-advanced-columns-2c60bc77{padding-top:64px;padding-bottom:64px;padding-left:24px;padding-right:24px}}@media (max-width:600px){#wp-block-themeisle-blocks-advanced-columns-2c60bc77{padding-top:40px;padding-bottom:40px}}#wp-block-themeisle-blocks-advanced-column-75b9263d{padding-top:0;padding-bottom:0;padding-left:0;padding-right:0}#wp-block-themeisle-blocks-advanced-column-75b9263d>.wp-block-themeisle-blocks-advanced-column-overlay{opacity:.5;mix-blend-mode:normal}@media (min-width:960px){#wp-block-themeisle-blocks-advanced-column-75b9263d{flex-basis:100%}}@media (max-width:600px){#wp-block-themeisle-blocks-advanced-column-75b9263d{padding-top:0;padding-bottom:0;padding-left:0;padding-right:0}}#wp-block-themeisle-blocks-advanced-heading-5d5675df{color:#fff;font-size:60px;--text-align:center;--text-align-tablet:center;--text-align-mobile:center}@media (max-width:960px){#wp-block-themeisle-blocks-advanced-heading-5d5675df{font-size:56px}}@media (max-width:600px){#wp-block-themeisle-blocks-advanced-heading-5d5675df{font-size:32px}}</style>
+<script src="./../wp-content/plugins/code-block-pro/build/front/front.js?ver=9e61187462c44495f394" id="kevinbatdorf-code-block-pro-view-script-js" data-wp-strategy="defer"></script>
+<script id="kevinbatdorf-code-block-pro-view-script-js-after">window.codeBlockPro = {"pluginUrl":".\/\/wp-content\/plugins\/code-block-pro\/"};</script>
+<script src="./../wp-content/plugins/otter-blocks/assets/glide/glide.min.js?ver=a6dc7de49a2817fdbed7" id="glidejs-js" async></script>
+<script id="otter-slider-js-extra">var themeisleGutenbergSlider = {"isRTL":""};</script>
+<script src="./../wp-content/plugins/otter-blocks/build/blocks/slider.js?ver=a6dc7de49a2817fdbed7" id="otter-slider-js" async></script>
+<script id="wp-block-template-skip-link-js-after">( function() {
+		var skipLinkTarget = document.querySelector( 'main' ),
+			sibling,
+			skipLinkTargetID,
+			skipLink;
+
+		// Early exit if a skip-link target can't be located.
+		if ( ! skipLinkTarget ) {
+			return;
+		}
+
+		/*
+		 * Get the site wrapper.
+		 * The skip-link will be injected in the beginning of it.
+		 */
+		sibling = document.querySelector( '.wp-site-blocks' );
+
+		// Early exit if the root element was not found.
+		if ( ! sibling ) {
+			return;
+		}
+
+		// Get the skip-link target's ID, and generate one if it doesn't exist.
+		skipLinkTargetID = skipLinkTarget.id;
+		if ( ! skipLinkTargetID ) {
+			skipLinkTargetID = 'wp--skip-link--target';
+			skipLinkTarget.id = skipLinkTargetID;
+		}
+
+		// Create the skip link.
+		skipLink = document.createElement( 'a' );
+		skipLink.classList.add( 'skip-link', 'screen-reader-text' );
+		skipLink.href = '#' + skipLinkTargetID;
+		skipLink.innerHTML = 'Skip to content';
+
+		// Inject the skip link.
+		sibling.parentElement.insertBefore( skipLink, sibling );
+	}() );</script>
+</body>
+</html>
