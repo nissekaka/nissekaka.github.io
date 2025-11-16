@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="max-image-preview:large">
 	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
-	<title>Flashlight &#8211; Anton-Eriksson.se</title>
+	<title>Zero Trace (WIP) &#8211; Anton-Eriksson.se</title>
 <link rel="alternate" type="application/rss+xml" title="Anton-Eriksson.se &raquo; Feed" href="./../feed/index.html">
 <link rel="alternate" type="application/rss+xml" title="Anton-Eriksson.se &raquo; Comments Feed" href="./../comments/feed/index.html">
 <script>
@@ -147,15 +147,11 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-2 wp-block-columns-is-layout-flex">
 <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:100%">
 <div class="wp-block-group alignwide has-raft-bg-alt-background-color has-background is-layout-flow wp-container-core-group-is-layout-5 wp-block-group-is-layout-flow" style="padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--40)">
-<h2 class="wp-block-heading has-text-align-center has-luminous-vivid-amber-color has-text-color has-link-color has-huge-font-size wp-elements-11637c7ff56c32f04a20cc2075fa218a">Flashlight</h2>
+<h2 class="wp-block-heading has-text-align-center has-vivid-red-color has-text-color has-link-color has-huge-font-size wp-elements-11637c7ff56c32f04a20cc2075fa218a">Zero Trace (WIP)</h2>
 
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="610" src="./../wp-content/uploads/2025/11/cover.png" alt="" class="wp-image-323" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
 
-
-<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2024/04/888b37db-069c-400f-afd4-c961a7547880-encode-1712820894128.mp4"></video></figure>
-
-
-
-<p class="has-link-color wp-elements-09065368c40878652a04c06062262104">This project was created in my own DirectX 11 graphics engine, <a href="https://github.com/nissekaka/Kege" data-type="link" data-id="https://github.com/nissekaka/Kege" target="_blank" rel="noreferrer noopener">source code available on GitHub</a>.</p>
+<p class="has-link-color wp-elements-09065368c40878652a04c06062262104">Game prototype currently being worked on using Unity 6.</p>
 
 
 
@@ -163,275 +159,39 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 
 
 
-<p>I played Alan Wake recently and thought it would be fun to implement a flashlight utilising the indirect lighting from reflective shadow maps.</p>
+<p>I've always loved open-world games. Ever since I was a kid playing Mafia on my father's work computer, I've dreamed of a game where you can enter every building and every NPC has a real daily routine, reacting naturally to the player's actions. I'm also a big fan of stealth games—especially series like Metal Gear Solid, Splinter Cell, and Hitman.
 
-
-
-<p>The key elements I wanted were:</p>
-
-
-
-<ul class="wp-block-list">
-<li>Indirect lighting</li>
-
-
-
-<li>A flashlight texture (a cookie)</li>
-
-
-
-<li>Particles lit by the flashlight</li>
-
-
-
-<li>Some kind of fog effect</li>
-</ul>
-
-
-
+Earlier this year I started playing Shadows of Doubt, an open-world detective game where you investigate crimes by breaking into people's homes, sneaking around for clues, and tracking down the culprit. It sparked an idea: what if I made a game in a similar style, but from the opposite perspective? Instead of playing the detective, you'd play the perpetrator. The contract killer. The hitman.</p>
 <hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
 
 
 
-<h3 class="wp-block-heading">Implementation</h3>
+<h3 class="wp-block-heading">Prototyping</h3>
 
 
 
-<p>So first I had to convert the reflective shadow map for spotlights. The only difference between directional light and spotlight is the flux where you have to consider the attenuation of the spotlight.</p>
+<p>After setting up a third-person player character, using a low-poly model I have modeled and animated for another project, my first major goal was to generate a city. The city is built on a grid with some streets intentionally broken up and the dead ends replaced with park areas.</p>
 
+<p>Initially, I generated each floor manually, placing doors randomly on walls that bordered a street. But this made city generation very slow, since I was placing every wall, window, and door individually. To speed things up, I switched to using prefabs for ground floors, middle floors, and roofs. This let me focus on getting a functional prototype working before spending too much time trying to generate the perfect city.</p>
 
+<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2025/11/generating_city.mp4"></video></figure>
 
-<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="610" src="./../wp-content/uploads/2024/04/Game_Release_68HiAL3BPE-1024x610.png" alt="" class="wp-image-323" srcset="./../wp-content/uploads/2024/04/Game_Release_68HiAL3BPE-1024x610.png 1024w, ./../wp-content/uploads/2024/04/Game_Release_68HiAL3BPE-300x179.png 300w, ./../wp-content/uploads/2024/04/Game_Release_68HiAL3BPE-768x457.png 768w, ./../wp-content/uploads/2024/04/Game_Release_68HiAL3BPE.png 1041w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+<p>Then I filled the world with citizens. They are each assigned a home and a workplace and their daily schedule currently consists of going to work some time in the morning and going home some time in the afternoon.</p>
+<p>The biggest challenge was having 1000+ NPCs walking around at the same time. To solve this I'm using a burst compiled job to update the transform of each visible citizen. Citizens that are not visible to the player or are too far away are updated at a lower rate and in batches instead.</p>
 
+<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2025/11/many_citizen.mp4"></video></figure>
+<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2025/11/culled_citizen.mp4"></video></figure>
 
+<p>My current goal has been to implement the game loop. I have multiple ideas for how this game could play out down the line. But for now I have a simple arrow pointing towards a random target, and a distance to it. If I eliminate the target, I just instantly get a new one.</p>
 
-<p>A lot of the magic comes from a function that checks whether a world position is inside a cone with a certain angle.</p>
+<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2025/11/hitman.mp4"></video></figure>
 
+<p>I have also started creating some behaviours for the citizen that will be crucial for the gameplay. If a citizen sees the player holding a gun, they get scared, and when they deem it safe they run home.</p>
+<p>My next goal will be to implement some kind of police that the citizen can report to. I also have to think about how to solve the stealth aspect of the game, be it security cameras or patrolling security.
+I think the biggest challenge will be to create a fun and engaging gameplay loop, while still maintaining the open-world aspect that I want to achieve.</p>
 
 
-<p>I use this to decide the alpha of particles and whether or not to calculate volumetric light:</p>
 
-
-
-<div class="wp-block-kevinbatdorf-code-block-pro" data-code-block-pro-font-family="Code-Pro-JetBrains-Mono" style="font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)">
-<span style="display:block;padding:16px 0 0 16px;margin-bottom:-1px;width:100%;text-align:left;background-color:#1E1E1E"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewbox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg></span><span role="button" tabindex="0" data-code="bool IsInSpotlightCone(float3 aWorldPosition, float aAngle)
-{
-    float3 toLight = lightPosition - aWorldPosition;
-    float distToLight = length(toLight);
-    float3 lightDir = normalize(toLight);
-    float angle = dot(lightDir, lightDirection);
-
-    return (angle &gt; cos(aAngle)) &amp;&amp; (distToLight &lt; lightRange);
-}" style="color:#D4D4D4;display:none" aria-label="Copy" class="code-block-pro-copy-button"><svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path class="with-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path><path class="without-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg></span><pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code><span class="line"><span style="color: #569CD6">bool</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">IsInSpotlightCone</span><span style="color: #D4D4D4">(</span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> aWorldPosition, </span><span style="color: #569CD6">float</span><span style="color: #D4D4D4"> aAngle)</span></span>
-<span class="line"><span style="color: #D4D4D4">{</span></span>
-<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> toLight = lightPosition - aWorldPosition;</span></span>
-<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float</span><span style="color: #D4D4D4"> distToLight = </span><span style="color: #DCDCAA">length</span><span style="color: #D4D4D4">(toLight);</span></span>
-<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float3</span><span style="color: #D4D4D4"> lightDir = </span><span style="color: #DCDCAA">normalize</span><span style="color: #D4D4D4">(toLight);</span></span>
-<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">float</span><span style="color: #D4D4D4"> angle = </span><span style="color: #DCDCAA">dot</span><span style="color: #D4D4D4">(lightDir, lightDirection);</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #C586C0">return</span><span style="color: #D4D4D4"> (angle &gt; </span><span style="color: #DCDCAA">cos</span><span style="color: #D4D4D4">(aAngle)) &amp;&amp; (distToLight &lt; lightRange);</span></span>
-<span class="line"><span style="color: #D4D4D4">}</span></span></code></pre>
-</div>
-
-
-
-<p>Changing angles of the volumetric light automatically hides or reveals particles.</p>
-
-
-
-<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2024/04/f3033af5-9e02-450e-a611-22f80faecd0a-encode-1712820777240.mp4"></video></figure>
-
-
-
-<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
-
-
-
-<h3 class="wp-block-heading">GPU Particles</h3>
-
-
-
-<p>The very first thing I did to include particles was to write a Sprite class to render a textured square that&#8217;s always facing the camera. At first I filled the whole scene with particles and updated their positions on the CPU, and then rendered them one by one. The more particles I added the slower it got, obviously. So I first had to draw them instanced which helped a lot with performance. But updating the positions of each particle was still taking a large chunk of time out of the CPU.</p>
-
-
-
-<p>There are a couple of solutions for this. First of all, don&#8217;t update and render particles over the whole scene, and second, utilise the graphics card for heavy computation. So I decided to familiarise myself with compute shaders.</p>
-
-
-
-<p>At first I had some trouble understanding the correlation between the dispatch size and the number of threads declared in the compute shader. I initially had a dispatch call like this:</p>
-
-
-
-<div class="wp-block-kevinbatdorf-code-block-pro" data-code-block-pro-font-family="Code-Pro-JetBrains-Mono" style="font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)">
-<span style="display:block;padding:16px 0 0 16px;margin-bottom:-1px;width:100%;text-align:left;background-color:#1E1E1E"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewbox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg></span><span role="button" tabindex="0" data-code="pContext-&gt;Dispatch(1024, 1, 1);" style="color:#D4D4D4;display:none" aria-label="Copy" class="code-block-pro-copy-button"><svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path class="with-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path><path class="without-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg></span><pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code><span class="line"><span style="color: #9CDCFE">pContext</span><span style="color: #D4D4D4">-&gt;</span><span style="color: #DCDCAA">Dispatch</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">1024</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">1</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">1</span><span style="color: #D4D4D4">);</span></span></code></pre>
-</div>
-
-
-
-<p>And a number of threads in the computer shader like this:</p>
-
-
-
-<div class="wp-block-kevinbatdorf-code-block-pro" data-code-block-pro-font-family="Code-Pro-JetBrains-Mono" style="font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)">
-<span style="display:block;padding:16px 0 0 16px;margin-bottom:-1px;width:100%;text-align:left;background-color:#1E1E1E"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewbox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg></span><span role="button" tabindex="0" data-code="[numthreads(1024, 1, 1)]" style="color:#D4D4D4;display:none" aria-label="Copy" class="code-block-pro-copy-button"><svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path class="with-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path><path class="without-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg></span><pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code><span class="line"><span style="color: #D4D4D4">[</span><span style="color: #DCDCAA">numthreads</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">1024</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">1</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">1</span><span style="color: #D4D4D4">)]</span></span></code></pre>
-</div>
-
-
-
-<p>I put the same number because I thought they had to match.</p>
-
-
-
-<p>After doing some more research I finally understood how they correlate. The dispatch number declares how many thread groups that are dispatched to the GPU. And the number of threads in the compute shader is per those dispatched groups. So 1024 thread groups consisting of 1024 threads each would result in 1 048 576 threads running the shader code.</p>
-
-
-
-<p>I wanted to fill the whole Sponza scene with 2 million particles. So I thought I was clever when I did this in the compute shader: </p>
-
-
-
-<div class="wp-block-kevinbatdorf-code-block-pro" data-code-block-pro-font-family="Code-Pro-JetBrains-Mono" style="font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)">
-<span style="display:block;padding:16px 0 0 16px;margin-bottom:-1px;width:100%;text-align:left;background-color:#1E1E1E"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewbox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg></span><span role="button" tabindex="0" data-code="[numthreads(1024, 1, 1)]
-void main(uint3 DTid : SV_DispatchThreadID)
-{
-    [unroll(2)]
-    for (int i = 0; i &lt; 2; ++i)
-    {
-        const uint updateIndex = DTid.x + 1048576 * i;
-..." style="color:#D4D4D4;display:none" aria-label="Copy" class="code-block-pro-copy-button"><svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path class="with-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path><path class="without-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg></span><pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code><span class="line"><span style="color: #D4D4D4">[</span><span style="color: #DCDCAA">numthreads</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">1024</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">1</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">1</span><span style="color: #D4D4D4">)]</span></span>
-<span class="line"><span style="color: #D4D4D4">void main(</span><span style="color: #4EC9B0">uint3</span><span style="color: #D4D4D4"> </span><span style="color: #4EC9B0">DTid</span><span style="color: #D4D4D4"> : </span><span style="color: #4EC9B0">SV_DispatchThreadID</span><span style="color: #D4D4D4">)</span></span>
-<span class="line"><span style="color: #D4D4D4">{</span></span>
-<span class="line"><span style="color: #D4D4D4">    [</span><span style="color: #DCDCAA">unroll</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">2</span><span style="color: #D4D4D4">)]</span></span>
-<span class="line"><span style="color: #D4D4D4">    for (</span><span style="color: #569CD6">int</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">i</span><span style="color: #D4D4D4"> = </span><span style="color: #B5CEA8">0</span><span style="color: #D4D4D4">; i &lt; </span><span style="color: #B5CEA8">2</span><span style="color: #D4D4D4">; ++i)</span></span>
-<span class="line"><span style="color: #D4D4D4">    {</span></span>
-<span class="line"><span style="color: #D4D4D4">        </span><span style="color: #569CD6">const</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">uint</span><span style="color: #D4D4D4"> updateIndex = </span><span style="color: #9CDCFE">DTid</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">x</span><span style="color: #D4D4D4"> + </span><span style="color: #B5CEA8">1048576</span><span style="color: #D4D4D4"> * i;</span></span>
-<span class="line"><span style="color: #D4D4D4">...</span></span></code></pre>
-</div>
-
-
-
-<p>Only the problem there is jumping that far in GPU memory is not very efficient. But it worked!</p>
-
-
-
-<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2024/04/c1bd7c98-ac05-402b-aed7-e4cd42552d21-encode-1712820641188.mp4"></video></figure>
-
-
-
-<p>My next idea was to limit the positions of each particle to wrap around the camera&#8217;s position so that the whole scene doesn&#8217;t have to be riddled with particles no one is looking at. That also meant I could go from having 2 million particles to 131 072 to save performance, and still make it appear that there are particles everywhere.</p>
-
-
-
-<p>I chose a dispatch of 2048:</p>
-
-
-
-<div class="wp-block-kevinbatdorf-code-block-pro" data-code-block-pro-font-family="Code-Pro-JetBrains-Mono" style="font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)">
-<span style="display:block;padding:16px 0 0 16px;margin-bottom:-1px;width:100%;text-align:left;background-color:#1E1E1E"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewbox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg></span><span role="button" tabindex="0" data-code="pContext-&gt;Dispatch(2048, 1, 1);" style="color:#D4D4D4;display:none" aria-label="Copy" class="code-block-pro-copy-button"><svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path class="with-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path><path class="without-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg></span><pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code><span class="line"><span style="color: #9CDCFE">pContext</span><span style="color: #D4D4D4">-&gt;</span><span style="color: #DCDCAA">Dispatch</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">2048</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">1</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">1</span><span style="color: #D4D4D4">);</span></span></code></pre>
-</div>
-
-
-
-<p>And thread group size of 64, and no more for-loop:</p>
-
-
-
-<div class="wp-block-kevinbatdorf-code-block-pro" data-code-block-pro-font-family="Code-Pro-JetBrains-Mono" style="font-size:.875rem;font-family:Code-Pro-JetBrains-Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;line-height:1.25rem;--cbp-tab-width:2;tab-size:var(--cbp-tab-width, 2)">
-<span style="display:block;padding:16px 0 0 16px;margin-bottom:-1px;width:100%;text-align:left;background-color:#1E1E1E"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewbox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg></span><span role="button" tabindex="0" data-code="[numthreads(64, 1, 1)]
-void main(uint3 DTid : SV_DispatchThreadID)
-{
-    const uint updateIndex = DTid.x;
-
-    instanceData[updateIndex].instanceTransform = UpdateTransform(updateIndex);
-    instanceData[updateIndex].colour.a = UpdateAlpha(updateIndex);
-    
-    particleData[updateIndex].travelAngles = UpdateAngles(updateIndex);
-    particleData[updateIndex].startPosition = ClampPosition(transform);
-}" style="color:#D4D4D4;display:none" aria-label="Copy" class="code-block-pro-copy-button"><svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path class="with-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path><path class="without-check" stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg></span><pre class="shiki dark-plus" style="background-color: #1E1E1E" tabindex="0"><code><span class="line"><span style="color: #D4D4D4">[</span><span style="color: #DCDCAA">numthreads</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">64</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">1</span><span style="color: #D4D4D4">, </span><span style="color: #B5CEA8">1</span><span style="color: #D4D4D4">)]</span></span>
-<span class="line"><span style="color: #D4D4D4">void main(</span><span style="color: #4EC9B0">uint3</span><span style="color: #D4D4D4"> </span><span style="color: #4EC9B0">DTid</span><span style="color: #D4D4D4"> : </span><span style="color: #4EC9B0">SV_DispatchThreadID</span><span style="color: #D4D4D4">)</span></span>
-<span class="line"><span style="color: #D4D4D4">{</span></span>
-<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #569CD6">const</span><span style="color: #D4D4D4"> </span><span style="color: #569CD6">uint</span><span style="color: #D4D4D4"> updateIndex = </span><span style="color: #9CDCFE">DTid</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">x</span><span style="color: #D4D4D4">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #9CDCFE">instanceData</span><span style="color: #D4D4D4">[updateIndex].</span><span style="color: #9CDCFE">instanceTransform</span><span style="color: #D4D4D4"> = </span><span style="color: #DCDCAA">UpdateTransform</span><span style="color: #D4D4D4">(updateIndex);</span></span>
-<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #9CDCFE">instanceData</span><span style="color: #D4D4D4">[updateIndex].</span><span style="color: #9CDCFE">colour</span><span style="color: #D4D4D4">.</span><span style="color: #9CDCFE">a</span><span style="color: #D4D4D4"> = </span><span style="color: #DCDCAA">UpdateAlpha</span><span style="color: #D4D4D4">(updateIndex);</span></span>
-<span class="line"><span style="color: #D4D4D4">    </span></span>
-<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #9CDCFE">particleData</span><span style="color: #D4D4D4">[updateIndex].</span><span style="color: #9CDCFE">travelAngles</span><span style="color: #D4D4D4"> = </span><span style="color: #DCDCAA">UpdateAngles</span><span style="color: #D4D4D4">(updateIndex);</span></span>
-<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #9CDCFE">particleData</span><span style="color: #D4D4D4">[updateIndex].</span><span style="color: #9CDCFE">startPosition</span><span style="color: #D4D4D4"> = </span><span style="color: #DCDCAA">ClampPosition</span><span style="color: #D4D4D4">(transform);</span></span>
-<span class="line"><span style="color: #D4D4D4">}</span></span></code></pre>
-</div>
-
-
-
-<p>So that all 2048 thread groups run 64 threads, which results in all 131 072 particles being updated.</p>
-
-
-
-<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2024/04/a8dcdcf7-268c-4433-850f-be8d3f37050c-encode-1712820833287.mp4"></video></figure>
-
-
-
-<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
-
-
-
-<h3 class="wp-block-heading">The Result</h3>
-
-
-
-<p>Putting everything together I have a flashlight that:</p>
-
-
-
-<ul class="wp-block-list">
-<li>Casts shadows</li>
-
-
-
-<li>Reflects indirect light on objects around it</li>
-
-
-
-<li>Uses a texture for the direct light</li>
-
-
-
-<li>Illuminates GPU particles</li>
-
-
-
-<li>Utilises volumetric lighting for a fog effect</li>
-</ul>
-
-
-
-<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2024/04/56075184-8264-4889-8203-d439533b0a27-encode-1712820641170.mp4"></video></figure>
-
-
-
-<figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2024/04/796945f6-8e69-4e90-b0ff-782a9bca73e9-encode-1712820777206.mp4"></video></figure>
-
-
-
-<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide">
-
-
-
-<h2 class="wp-block-heading">Next post</h2>
-
-
-
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-1 wp-block-columns-is-layout-flex">
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:100%">
-<div class="wp-block-group alignfull is-layout-flow wp-block-group-is-layout-flow">
-<div class="wp-block-cover">
-<span aria-hidden="true" class="wp-block-cover__background has-background-dim" style="background-color:#475a72"></span><img decoding="async" width="1309" height="757" class="wp-block-cover__image-background wp-image-551" alt="" src="./../wp-content/uploads/2024/04/vlc_ubcKHWZTkS.png" data-object-fit="cover" srcset="./../wp-content/uploads/2024/04/vlc_ubcKHWZTkS.png 1309w, ./../wp-content/uploads/2024/04/vlc_ubcKHWZTkS-300x173.png 300w, ./../wp-content/uploads/2024/04/vlc_ubcKHWZTkS-1024x592.png 1024w, ./../wp-content/uploads/2024/04/vlc_ubcKHWZTkS-768x444.png 768w" sizes="(max-width: 1309px) 100vw, 1309px"><div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow">
-<h1 class="wp-block-heading has-text-align-center has-pale-pink-color has-text-color has-link-color has-huge-font-size wp-elements-5a66f9937298c7ba198fde75ef46ceaa"><a href="./../gui-editor/index.html" data-type="link" data-id=".//flashlight/">GUI Editor</a></h1>
-</div>
-</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
