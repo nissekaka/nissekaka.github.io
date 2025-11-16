@@ -172,17 +172,18 @@ Earlier this year I started playing Shadows of Doubt, an open-world detective ga
 
 <p>After setting up a third-person player character, using a low-poly model I have modeled and animated for another project, my first major goal was to generate a city. The city is built on a grid with some streets intentionally broken up and the dead ends replaced with park areas.</p>
 
-<p>Initially, I generated each floor manually, placing doors randomly on walls that bordered a street. But this made city generation very slow, since I was placing every wall, window, and door individually. To speed things up, I switched to using prefabs for ground floors, middle floors, and roofs. This let me focus on getting a functional prototype working before spending too much time trying to generate the perfect city.</p>
+<p>Initially, I generated each floor one cell at a time on a 10x10 grid, placing an entrance on a wall facing a street. But this made the city generation very slow and required too much work this early in the project. To speed things up, I switched to using prefabs for ground floors, middle floors, and roofs. This let me focus on getting a functional prototype working before spending too much time trying to generate the perfect city.</p>
 
 <figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2025/11/generating_city.mp4"></video></figure>
 
 <p>Then I filled the world with citizens. They are each assigned a home and a workplace and their daily schedule currently consists of going to work some time in the morning and going home some time in the afternoon.</p>
-<p>The biggest challenge was having 1000+ NPCs walking around at the same time. To solve this I'm using a burst compiled job to update the transform of each visible citizen. Citizens that are not visible to the player or are too far away are updated at a lower rate and in batches instead.</p>
+<p>The biggest challenge was having 1000+ NPCs walking around at the same time. To solve this I'm using a burst compiled job to update the transform of each visible citizen. Citizens that are not visible to the player or are too far away are updated at a lower rate and in batches.</p>
 
 <figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2025/11/many_citizen.mp4"></video></figure>
+<p>Culled citizen with skeletal mesh and animation disabled:</p>
 <figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2025/11/culled_citizen.mp4"></video></figure>
 
-<p>My current goal has been to implement the game loop. I have multiple ideas for how this game could play out down the line. But for now I have a simple arrow pointing towards a random target, and a distance to it. If I eliminate the target, I just instantly get a new one.</p>
+<p>My most recent goal has been to implement the game loop. I have multiple ideas for how this game could play out down the line. But for now I have a simple arrow pointing towards a random target, and a distance to it. If I eliminate the target, I just instantly get a new one.</p>
 
 <figure class="wp-block-video"><video autoplay loop muted src="./../wp-content/uploads/2025/11/hitman.mp4"></video></figure>
 
